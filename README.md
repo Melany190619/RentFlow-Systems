@@ -1,16 +1,16 @@
-Tienes toda la razón. Ya agregué explícitamente la **Estrategia de Control de Versiones por Ramas (Git Branching Workflow)** en la sección de Metodología y Roles, detallando tu rol como **Líder de Proyecto** responsable de la revisión de *Pull Requests* (PRs) y la integración de ramas (`main`/`develop`) para los avances de Diego, Gabriel y Javier.
-
-Aquí tienes **todo el documento integral (Unidad 1 y Unidad 2 completas)** en un solo bloque listo para copiar y pegar directamente en tu archivo `README.md`:
-
-```markdown
 # RentFlow Systems - Documentación Técnica y Arquitectura de Software
 
-**Universidad Tecnológica de Torreón**  
-**Dirección de la Carrera de Ingeniería en Desarrollo y Gestión de Software**  
-**Asignatura:** Desarrollo Web Profesional  
-**Docente:** Ing. Jesús Del Toro Robledo  
-**Grado y Sección:** 8.º Cuatrimestre — Sección "A"  
-**Fecha de Publicación:** Octubre de 2026 — Torreón, Coahuila, México  
+**Universidad Tecnológica de Torreón**
+
+**Dirección de la Carrera de Ingeniería en Desarrollo y Gestión de Software**
+
+**Asignatura:** Desarrollo Web Profesional
+
+**Docente:** Ing. Jesús Del Toro Robledo
+
+**Grado y Sección:** 8.º Cuatrimestre — Sección "A"
+
+**Fecha de Publicación:** Octubre de 2026 — Torreón, Coahuila, México
 
 ---
 
@@ -30,7 +30,7 @@ RentFlow Systems es una solución web integral diseñada para la administración
 ### Ficha Técnica de Infraestructura
 
 | Componente | Tecnología Seleccionada | Versión / Especificación |
-| :--- | :--- | :--- |
+| --- | --- | --- |
 | **Arquitectura** | Desacoplada cliente-servidor (RESTful API) | Single Page Application (SPA) + Stateless API |
 | **Frontend Framework** | Angular | 17+ (TypeScript, ReactiveForms, RxJS) |
 | **Backend Framework** | Node.js / Express.js | Event-driven, I/O No Bloqueante |
@@ -44,12 +44,15 @@ RentFlow Systems es una solución web integral diseñada para la administración
 ## CAPÍTULO II. PROBLEMÁTICA Y JUSTIFICACIÓN DEL PROYECTO
 
 ### 2.1 Planteamiento y Contextualización
+
 Los pequeños negocios dedicados al arrendamiento de mobiliario administran existencias, clientes, reservaciones y logística de forma fragmentada. Los registros manuales en papel u hojas de cálculo sin validación concurrente generan las siguientes deficiencias operativas:
+
 1. **Incapacidad de cálculo por intervalos horarios:** La evaluación por día completo inhabilita el reúso de mobiliario devuelto temprano para eventos vespertinos o nocturnos.
 2. **Traslape de reservaciones (Overbooking):** La falta de un motor transaccional permite confirmar pedidos que superan la capacidad física real del almacén durante ventanas de coincidencia horaria.
 3. **Complejidad logística y falta de trazabilidad:** La información dispersa impide auditar qué usuario registró o modificó una orden y dificulta la planeación diaria de rutas de transporte.
 
 ### 2.2 Justificación Multifactorial
+
 * **Justificación Teórica:** Aplica principios de ingeniería de software sobre evaluación de intervalos de tiempo, control de acceso basado en roles (RBAC), arquitectura N-Capas y gestión de transacciones concurrentes pesimistas.
 * **Justificación Práctica y Operativa:** Centraliza la operación diaria reduciendo errores humanos en mostrador y campo, permitiendo a Administradores y Empleados trabajar sobre un único flujo validado.
 * **Justificación Metodológica y Tecnológica:** La combinación de Angular, Node.js, Express y MySQL garantiza una arquitectura extensible, responsiva y altamente mantenible.
@@ -61,9 +64,11 @@ Los pequeños negocios dedicados al arrendamiento de mobiliario administran exis
 ### 3.1 Objetivos
 
 #### 3.1.1 Objetivo General
+
 Desarrollar e implementar RentFlow Systems, un sistema web para la gestión de pequeños negocios dedicados al arrendamiento de mobiliario para eventos, utilizando Angular, Node.js, Express y MySQL, que centralice la información de clientes, inventario y rentas, valide la disponibilidad de artículos por fechas y horarios solicitados, y organice la operación logística mediante controles de seguridad.
 
 #### 3.1.2 Objetivos Específicos
+
 * Diseñar e implementar una base de datos relacional normalizada en 3FN en MySQL con soporte transaccional InnoDB.
 * Desarrollar una API RESTful stateless en Node.js/Express con validación estricta de entrada y manejo centralizado de errores.
 * Construir una interfaz SPA responsiva en Angular 17+ adaptada a dispositivos móviles, tabletas y computadoras.
@@ -72,7 +77,9 @@ Desarrollar e implementar RentFlow Systems, un sistema web para la gestión de p
 * Proporcionar un panel de control operativo para la gestión diaria de entregas y recolecciones.
 
 ### 3.2 Alcances del Proyecto
+
 Comprende el análisis, diseño, desarrollo, integración y prueba de una versión funcional que incluye:
+
 * Módulo de Autenticación y Seguridad (RBAC).
 * Módulo de Gestión de Clientes.
 * Módulo de Catálogo e Inventario Central.
@@ -81,12 +88,14 @@ Comprende el análisis, diseño, desarrollo, integración y prueba de una versi�
 * Módulo de Auditoría de Sistema (System Logs Inmutables).
 
 ### 3.3 Limitaciones
+
 * Sin integración fiscal CFDI/SAT.
 * Sin procesamiento de pagos con pasarelas en línea (cobro gestionado fuera de sistema).
 * Dependencia de conexión a red (sin funcionamiento offline en v1.0).
 * Sin aplicaciones móviles nativas (acceso vía navegador web responsivo).
 
 ### 3.4 Producto Mínimo Viable (MVP)
+
 El MVP integra: autenticación con roles, registro de clientes, catálogo de mobiliario con existencias, captura de rentas con validación transaccional de disponibilidad en servidor, panel de tareas diarias y validaciones de seguridad básicas.
 
 ---
@@ -94,6 +103,7 @@ El MVP integra: autenticación con roles, registro de clientes, catálogo de mob
 ## CAPÍTULO IV. REQUISITOS DEL SISTEMA Y LÓGICA DE NEGOCIO
 
 ### 4.1 Requisitos Funcionales (RF)
+
 * **RF-01 (Autenticación de Usuarios):** Credenciales de acceso mediante correo y contraseña con generación de JWT.
 * **RF-02 (Control de Acceso RBAC):** Restricción de endpoints y vistas según los roles Super Administrador, Administrador y Empleado.
 * **RF-03 (Gestión de Clientes):** Registro, edición y consulta de datos de contacto de clientes.
@@ -106,6 +116,7 @@ El MVP integra: autenticación con roles, registro de clientes, catálogo de mob
 * **RF-10 (Historial y Auditoría):** Bitácora inmutable de eventos con registro de usuario, acción, estampa de tiempo e IP.
 
 ### 4.2 Requisitos No Funcionales (RNF)
+
 * **RNF-01 (Seguridad de Credenciales):** Hashing de contraseñas mediante Bcrypt con costo de salado 10.
 * **RNF-02 (Validación de Entradas):** Sanitización en backend con `express-validator` y `xss-clean`.
 * **RNF-03 (Protección SQLi):** Uso exclusivo de consultas preparadas (Prepared Statements).
@@ -120,7 +131,7 @@ El MVP integra: autenticación con roles, registro de clientes, catálogo de mob
 ### 4.3 Historias de Usuario Destacadas
 
 | ID | Rol | Historia de Usuario | Criterio de Aceptación |
-| :--- | :--- | :--- | :--- |
+| --- | --- | --- | --- |
 | **HU-01** | Empleado | Consultar disponibilidad horaria de artículos para una fecha y rango de horas. | El sistema muestra solo los artículos con stock real suficiente para ese bloque exacto. |
 | **HU-02** | Administrador | Gestionar el catálogo de artículos, stock total y precios de renta por día. | Cambios reflejados al instante en el módulo de rentas. |
 | **HU-03** | Empleado | Registrar datos de cliente y asociarlos a un contrato de renta. | Teléfono validado a 10 dígitos y dirección completa obligatoria. |
@@ -135,7 +146,7 @@ El MVP integra: autenticación con roles, registro de clientes, catálogo de mob
 El proyecto evalúa 15 riesgos críticos ponderados por Probabilidad (P: 1-5) e Impacto (I: 1-5), determinando el Nivel (N = P × I).
 
 | ID | Riesgo | P | I | Nivel | Consecuencia | Estrategia de Mitigación / Solución |
-| :---: | :--- | :---: | :---: | :---: | :--- | :--- |
+| --- | --- | --- | --- | --- | --- | --- |
 | **R1** | Salida de integrante del equipo | 3 | 5 | **15** | Retraso y sobrecarga de trabajo | Documentación compartida, WBS y representante designado (Javier). |
 | **R2** | Reservas simultáneas (Overbooking) | 3 | 5 | **15** | Compromiso de inventario inexistente | Transacciones pesimistas (`SELECT ... FOR UPDATE`) en MySQL InnoDB. |
 | **R3** | Caída del servidor Node.js (Crash) | 2 | 4 | **8** | Interrupción del servicio web | Gestor de procesos PM2 con reinicio automático y logs de error. |
@@ -157,22 +168,27 @@ El proyecto evalúa 15 riesgos críticos ponderados por Probabilidad (P: 1-5) e 
 ## CAPÍTULO VI. METODOLOGÍA, ROLES Y ESTRATEGIA DE CONTROL DE VERSIONES
 
 ### 6.1 Metodología Scrum Adaptada
+
 El proyecto se ejecuta en iteraciones (Sprints) de 2 semanas, garantizando la integración continua de la interfaz SPA con la API RESTful.
 
 ### 6.2 Estrategia de Control de Versiones y Flujo de Ramas (Git Branching Model)
+
 Para garantizar la estabilidad del código base y la integridad de las entregas, el equipo aplica un flujo de trabajo estructurado por ramas (Feature Branch Workflow) bajo la administración directa de **Melany Landeros** (Líder de Proyecto y Arquitecta de Software):
+
 * **Rama `main` (Producción):** Rama protegida que contiene código estable y listo para despliegue.
 * **Rama `develop` (Integración):** Rama central donde se consolidan las funcionalidades de cada hito tras superar pruebas de integración.
 * **Ramas `feature/*` (Desarrollo Individual):** Ramas de trabajo aisladas asignadas por rol y módulo:
-  * `feature/frontend-*` (Diego Cassio - Vistas, Formularios y Estilos)
-  * `feature/backend-*` (Gabriel - API, Middlewares y Algoritmo)
-  * `feature/database-*` (Javier Saucedo - Scripts DDL, Procedimientos y Transacciones)
+* `feature/frontend-*` (Diego Cassio - Vistas, Formularios y Estilos)
+* `feature/backend-*` (Gabriel - API, Middlewares y Algoritmo)
+* `feature/database-*` (Javier Saucedo - Scripts DDL, Procedimientos y Transacciones)
+
+
 * **Gestión de Pull Requests (PRs) y Code Review:** La Líder de Proyecto es la única integrante autorizada para auditar el código, resolver conflictos y ejecutar los *Merges* hacia `develop` y `main`, garantizando que ninguna actualización rompa módulos previamente validados.
 
 ### 6.3 Estructura de Desglose de Trabajo (WBS)
 
 | ID | Tarea / Descripción | Responsable | Esfuerzo | Criterio de Aceptación |
-| :--- | :--- | :--- | :---: | :--- |
+| --- | --- | --- | --- | --- |
 | **T-01** | Documentación de Arquitectura y Rúbrica | Melany | 15 HH | Requisitos, WBS, diagramas y cronograma aprobados. |
 | **T-02** | Diseño DDL de BD MySQL e índices | Javier | 12 HH | Script SQL ejecutable en 3FN con transacciones y tablas log. |
 | **T-03** | Configuración inicial de API REST Express | Gabriel | 8 HH | Servidor Node conectado a MySQL con manejo de errores. |
@@ -188,7 +204,7 @@ Para garantizar la estabilidad del código base y la integridad de las entregas,
 ### 6.4 Cronograma e Hitos Verificables
 
 | Hito / Actividad | Responsable | Fecha Inicio | Fecha Fin | Entregable Clave |
-| :--- | :--- | :---: | :---: | :--- |
+| --- | --- | --- | --- | --- |
 | **Hito 1:** Documentación Técnica Inicial | Melany | 05/Oct/2026 | 13/Oct/2026 | Documento de Arquitectura y Rúbrica entregado. |
 | **Hito 2:** Diseño DDL y Maquetación Base | Javier / Diego | 14/Oct/2026 | 29/Oct/2026 | Script MySQL e interfaces de UI prototipadas. |
 | **Hito 3:** Núcleo Lógico, Auth y Backend | Gabriel | 30/Oct/2026 | 15/Nov/2026 | API REST, JWT y motor de disponibilidad funcional. |
@@ -202,15 +218,18 @@ Para garantizar la estabilidad del código base y la integridad de las entregas,
 ### 7.1 Patrones de Diseño Implementados
 
 #### Patrones Creacionales
+
 * **Singleton:** Aplicado en la gestión del Pool de Conexiones a MySQL (`database.js`) para evitar el agotamiento de puertos socket.
 * **Factory Method:** Implementado en `HttpResponseFactory` para estandarizar las respuestas JSON de la API.
 
 #### Patrones Estructurales
+
 * **Facade:** Encapsulado en `RentaService` para coordinar la verificación de cliente, validación de stock, transacciones SQL y registro de logs en una sola invocación (`crearRenta()`).
 * **Decorator:** Utilizado en la tubería de middlewares de Express (Helmet, Auth JWT, RBAC) y en el `AuthInterceptor` de Angular.
 * **Adapter:** Implementado en `DateAdapter` para normalizar fechas entre Angular y MySQL en formato UTC.
 
 #### Patrones de Comportamiento
+
 * **Strategy:** Utilizado en `DisponibilidadStrategy` para intercambiar algoritmos de cálculo de inventario según el contexto operativo.
 * **Observer:** Implementado mediante RxJS (`BehaviorSubject`) en Angular para la reactividad de la interfaz.
 * **Chain of Responsibility:** Aplicado en el flujo de ejecución de middlewares en Express.js.
@@ -258,7 +277,7 @@ rectangle "Sistema RentFlow" {
   CU07 ..> CU09 : <<include>>
   CU09 <.. CU10 : <<extend>>\n(Si conflicto <= 1h)
 }
-@uml
+@enduml
 
 ```
 
@@ -346,7 +365,7 @@ cliente ||--o{ renta
 renta ||--|{ detalle
 mobiliario ||--o{ detalle
 usuario ||--o{ log
-@startuml
+@enduml
 
 ```
 
@@ -385,7 +404,7 @@ Ctrl -> DB : COMMIT
 Ctrl --> API : HTTP 201 Created (Folio RF-2048)
 API --> UI : Confirmación
 UI --> User : Despliega Pantalla "PEDIDO REGISTRADO"
-@startuml
+@enduml
 
 ```
 
@@ -549,7 +568,7 @@ Tabla exclusiva para Super Administrador que muestra el historial inmutable de a
 
 1. **Clonar el Repositorio:**
 ```bash
-git clone [https://github.com/tu-usuario/rentflow-system.git](https://github.com/tu-usuario/rentflow-system.git)
+git clone https://github.com/tu-usuario/rentflow-system.git
 cd rentflow-system
 
 ```
@@ -578,8 +597,21 @@ ng serve
 ```
 
 
-Abre tu navegador e ingresa a `http://localhost:4200`.
+Abre tu navegador e ingresa a `http://localhost:4200.
 
-```
+`http://localhost:4200`.
 
-```
+---
+
+## CAPÍTULO XIII. CONTACTO Y LICENCIA DE USO
+
+### Equipo de Desarrollo — Universidad Tecnológica de Torreón
+
+* **Líder de Proyecto & Arquitecta de Software:** Melany Elena de los Angeles Landeros Fernández
+* **Desarrollador Frontend:** Diego Cassio
+* **Desarrollador Backend:** Gabriel
+* **Administrador de Base de Datos:** Javier Saucedo
+
+### Licencia del Proyecto
+
+Este proyecto de software se distribuye bajo la **Licencia MIT**. Todos los derechos sobre la marca, arquitectura y diseño de interfaz de **RentFlow Systems** quedan reservados para el equipo de desarrollo de la Universidad Tecnológica de Torreón (2026).
