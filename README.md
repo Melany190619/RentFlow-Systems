@@ -412,81 +412,108 @@ UI --> User : Despliega Pantalla "PEDIDO REGISTRADO"
 
 ## CAPÍTULO VIII. DICCIONARIO DE DATOS COMPLETO
 
-### 1. Tabla: `usuarios`
+## 1. Tabla: `roles`
+
+Almacena los diferentes perfiles de acceso al sistema y define los privilegios que tendrán los usuarios según sus responsabilidades.
+
+| Campo | Tipo de Dato | Llave | Restricciones | Descripción |
+| --- | --- | --- | --- | --- |
+| `id_rol` | `INT` | **PK** | `AUTO_INCREMENT`, `NOT NULL` | Identificador único del rol. |
+| `nombre` | `VARCHAR(50)` | — | `NOT NULL`, `UNIQUE` | Nombre del rol. |
+| `descripcion` | `VARCHAR(150)` | — | `NULL` | Descripción de las funciones del rol. |
+| `estatus` | `TINYINT(1)` | — | `NOT NULL`, `DEFAULT 1` | Estado del rol (`1` = Activo, `0` = Inactivo). |
+
+### 2. Tabla: `usuarios`
+
+Almacena las cuentas de acceso al sistema y define el nivel de privilegios mediante roles.
 
 | Campo | Tipo de Dato | Llave | Restricciones | Descripción |
 | --- | --- | --- | --- | --- |
 | `id_usuario` | `INT` | **PK** | `AUTO_INCREMENT`, `NOT NULL` | Identificador único del usuario. |
 | `nombre` | `VARCHAR(100)` | — | `NOT NULL` | Nombre completo del usuario. |
-| `email` | `VARCHAR(100)` | — | `UNIQUE`, `NOT NULL` | Correo electrónico de acceso. |
-| `password_hash` | `VARCHAR(255)` | — | `NOT NULL` | Hash cifrado con Bcrypt. |
-| `rol` | `ENUM('SUPERADMIN','ADMINISTRADOR','EMPLEADO')` | — | `NOT NULL` | Rol y privilegios del usuario. |
-| `estatus` | `TINYINT(1)` | — | `NOT NULL`, `DEFAULT 1` | Estado de la cuenta (`1` = Activa, `0` = Inactiva). |
+| `email` | `VARCHAR(100)` | — | `NOT NULL`, `UNIQUE` | Correo electrónico para autenticación. |
+| `password_hash` | `VARCHAR(255)` | — | `NOT NULL` | Hash de la contraseña generado mediante bcrypt o Argon2. |
+| `id_rol` | `INT` | **FK** | `NOT NULL` | Referencia a `roles(id_rol)`. Rol asignado al usuario. |
+| `estatus` | `TINYINT(1)` | — | `NOT NULL`, `DEFAULT 1` | Estado de la cuenta (`1` = Activo, `0` = Inactivo). |
+| `fecha_creacion` | `DATETIME` | — | `NOT NULL`, `DEFAULT CURRENT_TIMESTAMP` | Fecha y hora de creación de la cuenta. |
+| `fecha_actualizacion` | `DATETIME` | — | `NULL` | Fecha y hora de la última modificación. |
 
-### 2. Tabla: `categorias`
+### 3. Tabla: `categorias`
+
+Clasifica el catálogo de mobiliario para optimizar búsquedas y filtrados.
 
 | Campo | Tipo de Dato | Llave | Restricciones | Descripción |
 | --- | --- | --- | --- | --- |
 | `id_categoria` | `INT` | **PK** | `AUTO_INCREMENT`, `NOT NULL` | Identificador único de la categoría. |
-| `nombre` | `VARCHAR(50)` | — | `UNIQUE`, `NOT NULL` | Nombre de la categoría (*Sillas, Mesas, Toldos*, etc.). |
+| `nombre` | `VARCHAR(50)` | — | `NOT NULL`, `UNIQUE` | Nombre de la categoría (Sillas, Mesas, Toldos, Salas Lounge). |
+| `estatus` | `TINYINT(1)` | — | `NOT NULL`, `DEFAULT 1` | Estado de la categoría (`1` = Activa, `0` = Inactiva). |
 
-### 3. Tabla: `mobiliario`
+### 4. Tabla: `mobiliario`
 
-| Campo | Tipo de Dato | Llave | Restricciones | Descripción |
-| --- | --- | --- | --- | --- |
-| `id_mobiliario` | `INT` | **PK** | `AUTO_INCREMENT`, `NOT NULL` | Identificador del producto. |
-| `id_categoria` | `INT` | **FK** | `NOT NULL` | Referencia a `categorias(id_categoria)`. |
-| `nombre` | `VARCHAR(100)` | — | `NOT NULL` | Nombre comercial del artículo. |
-| `descripcion` | `TEXT` | — | `NULL` | Especificaciones técnicas y dimensiones. |
-| `precio_dia` | `DECIMAL(10,2)` | — | `NOT NULL`, `CHECK (precio_dia > 0)` | Tarifa de arrendamiento diaria. |
-| `stock_disponible` | `INT` | — | `NOT NULL`, `CHECK (stock_disponible >= 0)` | Cantidad física total en almacén. |
-| `imagen_url` | `VARCHAR(255)` | — | `NULL` | Ruta del archivo de imagen (formatos WebP/PNG). |
-
-### 4. Tabla: `clientes`
+Registra el inventario de artículos para arrendamiento, sus tarifas por día y la cantidad física total disponible en almacén.
 
 | Campo | Tipo de Dato | Llave | Restricciones | Descripción |
 | --- | --- | --- | --- | --- |
-| `id_cliente` | `INT` | **PK** | `AUTO_INCREMENT`, `NOT NULL` | Identificador del cliente. |
-| `nombre_completo` | `VARCHAR(150)` | — | `NOT NULL` | Nombre o razón social del titular. |
-| `telefono` | `VARCHAR(10)` | — | `NOT NULL` | Teléfono de contacto a 10 dígitos. |
-| `email` | `VARCHAR(100)` | — | `NULL` | Correo electrónico opcional. |
+| `id_mobiliario` | `INT` | **PK** | `AUTO_INCREMENT`, `NOT NULL` | Identificador único del artículo. |
+| `id_categoria` | `INT` | **FK** | `NOT NULL` | Referencia a `categorias(id_categoria)`. Categoría a la que pertenece el artículo. |
+| `nombre` | `VARCHAR(100)` | — | `NOT NULL` | Denominación comercial del producto. |
+| `descripcion` | `TEXT` | — | `NULL` | Especificaciones técnicas y de uso. |
+| `precio_dia` | `DECIMAL(10,2)` | — | `NOT NULL`, `CHECK (precio_dia >= 0)` | Tarifa diaria de alquiler. |
+| `stock_total` | `INT` | — | `NOT NULL`, `CHECK (stock_total >= 0)` | Cantidad física total del artículo en almacén. |
+| `imagen_url` | `VARCHAR(255)` | — | `NULL` | Ruta o URL de la imagen del artículo. |
+| `estatus` | `TINYINT(1)` | — | `NOT NULL`, `DEFAULT 1` | Estado del artículo (`1` = Activo, `0` = Inactivo). |
+| `fecha_creacion` | `DATETIME` | — | `NOT NULL`, `DEFAULT CURRENT_TIMESTAMP` | Fecha y hora de registro del artículo. |
+| `fecha_actualizacion` | `DATETIME` | — | `NULL` | Fecha y hora de la última modificación. |
 
-### 5. Tabla: `rentas`
+### 5. Tabla: `clientes`
 
-| Campo | Tipo de Dato | Llave | Restricciones | Descripción |
-| --- | --- | --- | --- | --- |
-| `id_renta` | `INT` | **PK** | `AUTO_INCREMENT`, `NOT NULL` | Identificador interno del contrato. |
-| `folio` | `VARCHAR(20)` | — | `UNIQUE`, `NOT NULL` | Clave alfanumérica única (ej. `RF-2048`). |
-| `id_cliente` | `INT` | **FK** | `NOT NULL` | Referencia a `clientes(id_cliente)`. |
-| `id_usuario` | `INT` | **FK** | `NOT NULL` | Referencia a `usuarios(id_usuario)`. |
-| `fecha_hora_entrega` | `DATETIME` | — | `NOT NULL` | Estampa temporal de entrega programada. |
-| `fecha_hora_devolucion` | `DATETIME` | — | `NOT NULL` | Estampa temporal de recolección programada. |
-| `direccion_entrega` | `TEXT` | — | `NOT NULL` | Domicilio completo de la locación. |
-| `total_por_dia` | `DECIMAL(10,2)` | — | `NOT NULL` | Importe total diario acumulado. |
-| `estatus` | `ENUM('POR_ENTREGAR','EN_RENTA','COMPLETADA','CANCELADA')` | — | `NOT NULL`, `DEFAULT 'POR_ENTREGAR'` | Estatus del ciclo logístico. |
-| `fecha_registro` | `DATETIME` | — | `NOT NULL`, `DEFAULT CURRENT_TIMESTAMP` | Estampa de auditoría de creación. |
-
-### 6. Tabla: `detalle_renta`
+Almacena el directorio de personas o empresas que contratan los servicios de arrendamiento.
 
 | Campo | Tipo de Dato | Llave | Restricciones | Descripción |
 | --- | --- | --- | --- | --- |
-| `id_detalle` | `INT` | **PK** | `AUTO_INCREMENT`, `NOT NULL` | Identificador del renglón de desglose. |
-| `id_renta` | `INT` | **FK** | `NOT NULL`, `ON DELETE CASCADE` | Referencia a `rentas(id_renta)`. |
-| `id_mobiliario` | `INT` | **FK** | `NOT NULL` | Referencia a `mobiliario(id_mobiliario)`. |
-| `cantidad` | `INT` | — | `NOT NULL`, `CHECK (cantidad > 0)` | Piezas reservadas de este ítem. |
-| `precio_unitario_dia` | `DECIMAL(10,2)` | — | `NOT NULL` | Fotografía histórica de la tarifa diaria. |
-| `subtotal_dia` | `DECIMAL(10,2)` | — | `NOT NULL` | Resultado de `cantidad` * `precio_unitario_dia`. |
+| `id_cliente` | `INT` | **PK** | `AUTO_INCREMENT`, `NOT NULL` | Identificador único del cliente. |
+| `nombre_completo` | `VARCHAR(150)` | — | `NOT NULL` | Nombre completo o razón social del titular. |
+| `telefono` | `VARCHAR(10)` | — | `NOT NULL` | Número telefónico de contacto a 10 dígitos. |
+| `email` | `VARCHAR(100)` | — | `NULL` | Correo electrónico opcional de contacto. |
+| `estatus` | `TINYINT(1)` | — | `NOT NULL`, `DEFAULT 1` | Estado del cliente (`1` = Activo, `0` = Inactivo). |
+| `fecha_registro` | `DATETIME` | — | `NOT NULL`, `DEFAULT CURRENT_TIMESTAMP` | Fecha y hora de registro del cliente. |
 
-### 7. Tabla: `system_logs`
+### 6. Tabla: `rentas`
+
+Entidad transaccional principal que representa cada contrato de arrendamiento, su periodo de vigencia y su estado operativo.
 
 | Campo | Tipo de Dato | Llave | Restricciones | Descripción |
 | --- | --- | --- | --- | --- |
-| `id_log` | `INT` | **PK** | `AUTO_INCREMENT`, `NOT NULL` | Identificador del evento de auditoría. |
-| `id_usuario` | `INT` | **FK** | `NOT NULL` | Referencia a `usuarios(id_usuario)`. |
-| `accion` | `VARCHAR(100)` | — | `NOT NULL` | Acción realizada (`CREAR_RENTA`, `LOGIN`, etc.). |
-| `tabla_afectada` | `VARCHAR(50)` | — | `NOT NULL` | Entidad modificada en el sistema. |
-| `ip_origen` | `VARCHAR(45)` | — | `NOT NULL` | Dirección IP del cliente que ejecutó la orden. |
-| `fecha_hora` | `DATETIME` | — | `NOT NULL`, `DEFAULT CURRENT_TIMESTAMP` | Fecha y hora exacta del registro inmutable. |
+| `id_renta` | `INT` | **PK** | `AUTO_INCREMENT`, `NOT NULL` | Identificador único de la renta. |
+| `folio` | `VARCHAR(20)` | — | `NOT NULL`, `UNIQUE` | Clave correlativa única del contrato (ej. `RF-2048`). |
+| `id_cliente` | `INT` | **FK** | `NOT NULL` | Referencia a `clientes(id_cliente)`. Cliente asignado a la renta. |
+| `id_usuario` | `INT` | **FK** | `NOT NULL` | Referencia a `usuarios(id_usuario)`. Usuario que registró la renta. |
+| `fecha_hora_entrega` | `DATETIME` | — | `NOT NULL` | Fecha y hora programadas para la entrega del mobiliario. |
+| `fecha_hora_devolucion` | `DATETIME` | — | `NOT NULL` | Fecha y hora programadas para la recolección del mobiliario. |
+| `fecha_entrega_real` | `DATETIME` | — | `NULL` | Fecha y hora en que se realizó la entrega del mobiliario. |
+| `fecha_devolucion_real` | `DATETIME` | — | `NULL` | Fecha y hora en que se realizó la devolución del mobiliario. |
+| `direccion_entrega` | `TEXT` | — | `NOT NULL` | Domicilio exacto donde se realizará el evento. |
+| `total_por_dia` | `DECIMAL(10,2)` | — | `NOT NULL`, `CHECK (total_por_dia >= 0)` | Importe diario acumulado de los artículos incluidos en la renta. |
+| `total_renta` | `DECIMAL(10,2)` | — | `NOT NULL`, `CHECK (total_renta >= 0)` | Importe total calculado para el periodo de arrendamiento. |
+| `observaciones` | `TEXT` | — | `NULL` | Notas adicionales relacionadas con la renta. |
+| `estatus` | `ENUM('POR_ENTREGAR', 'EN_RENTA', 'COMPLETADA', 'CANCELADA')` | — | `NOT NULL`, `DEFAULT 'POR_ENTREGAR'` | Estado operativo de la renta. |
+| `fecha_registro` | `DATETIME` | — | `NOT NULL`, `DEFAULT CURRENT_TIMESTAMP` | Fecha y hora de creación de la renta. |
+| `fecha_actualizacion` | `DATETIME` | — | `NULL` | Fecha y hora de la última modificación. |
+
+### 7. Tabla: `detalle_renta`
+
+Entidad asociativa que resuelve la relación muchos a muchos entre rentas y mobiliario, almacenando las cantidades y conservando los precios históricos de los artículos al momento del arrendamiento.
+
+| Campo | Tipo de Dato | Llave | Restricciones | Descripción |
+| --- | --- | --- | --- | --- |
+| `id_detalle` | `INT` | **PK** | `AUTO_INCREMENT`, `NOT NULL` | Identificador único del renglón de detalle. |
+| `id_renta` | `INT` | **FK** | `NOT NULL` | Referencia a `rentas(id_renta)`. Contrato de renta asociado. |
+| `id_mobiliario` | `INT` | **FK** | `NOT NULL` | Referencia a `mobiliario(id_mobiliario)`. Artículo asignado a la renta. |
+| `cantidad` | `INT` | — | `NOT NULL`, `CHECK (cantidad > 0)` | Unidades rentadas de este artículo. |
+| `precio_unitario_dia` | `DECIMAL(10,2)` | — | `NOT NULL`, `CHECK (precio_unitario_dia >= 0)` | Precio diario por unidad al momento de registrar la renta. |
+| `subtotal_dia` | `DECIMAL(10,2)` | — | `NOT NULL`, `CHECK (subtotal_dia >= 0)` | Resultado de multiplicar `cantidad` por `precio_unitario_dia`. |
+
+**Restricción adicional:** Se recomienda establecer una restricción `UNIQUE` sobre la combinación `id_renta` e `id_mobiliario`, para evitar que el mismo artículo aparezca en múltiples renglones de una misma renta.
 
 ---
 
