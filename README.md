@@ -886,6 +886,7 @@ Para asegurar el cumplimiento normativo en materia de derecho de autor y garanti
 Aquí se muestran las vistas que se ven y se comportan igual en todos los usuarios[cite: 85].
 
 ### 1.1.1 Módulo: Inicio de Sesión[cite: 85]
+<img width="877" height="841" alt="image" src="https://github.com/user-attachments/assets/23236938-941f-4eff-bbdc-8214852b4ac8" />
 
 * **Descripción General:** La interfaz de autenticación se presenta en un diseño minimalista, limpio y estructurado sobre una tarjeta central de superficie blanca (`#ffffff`) dispuesta en un lienzo general de tono neutro (`#f6f8f7`)[cite: 85]. Su propósito es restringir el acceso a las funciones globales del sistema, garantizando la seguridad mediante un entorno visual libre de distracciones y con controles de alta accesibilidad (*Senior-First*)[cite: 85].
 * **Elementos de la Interfaz:**[cite: 85]
@@ -906,10 +907,11 @@ Aquí se muestran las vistas que se ven y se comportan igual en todos los usuari
 
 ## 1.2 Vistas de Super administrador[cite: 87]
 
-[RentFlow Super Admin – Figma Make][cite: 87]
+https://www.figma.com/make/yczyXQHkMQ5DBh8myFn67D/RentFlow-Super-Admin?fullscreen=1&t=ajoPcQ0346oKUCja-1&code-node-id=0-6
 
 ### 1.2.1 Módulo: Panel Principal / Dashboard[cite: 87]
-
+<img width="1872" height="825" alt="image" src="https://github.com/user-attachments/assets/26305eae-0319-4fc1-a75a-366961117bc1" />
+<img width="1862" height="821" alt="image" src="https://github.com/user-attachments/assets/babe2ec1-1f2e-4f8d-8636-c5fe590ff406" />
 * **Descripción General:** Es la interfaz central de control y supervisión que se presenta inmediatamente después de autenticarse exitosamente en el sistema[cite: 87]. Combina la operación logística diaria de campo con métricas gerenciales y de infraestructura en tiempo real, manteniendo la línea gráfica limpia, minimalista y de alto contraste característica del RentFlow Design System[cite: 87, 88].
 
 1. **Elementos de la Interfaz: Barra de Navegación Superior (Top Navbar):**[cite: 88]
@@ -935,6 +937,7 @@ Aquí se muestran las vistas que se ven y se comportan igual en todos los usuari
    * Un carrusel o barra de navegación horizontal que abarca el rango de la semana en curso (ej. 26 de octubre – 1 de noviembre, 2026), desglosando los días de la semana (Lunes a Domingo) con conteo de movimientos asociados por fecha y un indicador visual de selección para el día actual (HOY - 29 de octubre)[cite: 89].
 
 ### 1.2.2 Módulo: Gestión de Usuarios[cite: 90]
+<img width="1871" height="837" alt="image" src="https://github.com/user-attachments/assets/3a87140d-975f-42d8-a097-4889188ac0ce" />
 
 * **Descripción General:** Es la interfaz administrativa exclusiva del Super Administrador destinada al control de perfiles, permisos y accesos corporativos al sistema[cite: 90]. Permite supervisar la distribución del personal, otorgar credenciales y administrar el ciclo de vida de las cuentas de usuario bajo un esquema jerárquico y seguro[cite: 90].
 * **Elementos de la Interfaz:**[cite: 90]
@@ -955,6 +958,7 @@ Aquí se muestran las vistas que se ven y se comportan igual en todos los usuari
      * **Fichas de Perfil:** Cada fila muestra un avatar circular con las iniciales del empleado (ej. JP, AM, LC), nombre completo, dirección de correo electrónico institucional, una etiqueta distintiva de rol mediante pastillas o badges (ej. "Administrador" en tono púrpura o "Operador/Ayudante"), un indicador visual de estatus con punto de color (ej. verde para "Activo"), y botones operativos de control para la edición de perfil (icono de lápiz) y eliminación o baja (icono de papelera)[cite: 91, 92].
 
 #### 1.2.2.1 Módulo: Modal / Ventana Emergente de Creación de Cuenta[cite: 92]
+<img width="1840" height="817" alt="image" src="https://github.com/user-attachments/assets/79529304-1357-4ba2-9d5d-84f6a05fbe7b" />
 
 * **Descripción General:** Es un contenedor flotante de tipo modal superpuesto sobre la interfaz de gestión, diseñado exclusivamente para que el Super Administrador realice el alta de nuevas cuentas de personal en el sistema[cite: 92]. Implementa controles estructurados para la asignación segura de credenciales corporativas y la restricción de privilegios según el rol operativo[cite: 92].
 * **Elementos de la Interfaz:**[cite: 92]
@@ -972,6 +976,8 @@ Aquí se muestran las vistas que se ven y se comportan igual en todos los usuari
      * **Cancelar:** Botón secundario con borde sutil para descartar el registro y cerrar la ventana[cite: 93].
      * **Crear cuenta:** Botón de llamada a la acción primario y destacado en color verde corporativo (`#087f5b`) con icono de suma (`+`), encargado de procesar y guardar el nuevo perfil en la base de datos[cite: 93].
 ### 1.2.3 Módulo: Catálogo de Mobiliario[cite: 94]
+<img width="1867" height="848" alt="image" src="https://github.com/user-attachments/assets/fd4c316a-5e5a-46e1-92fb-10fa8fdbdc43" />
+<img width="1842" height="822" alt="image" src="https://github.com/user-attachments/assets/de53fc35-f9e2-4c13-977b-2aa423dab5d1" />
 
 * **Descripción General:** Es la interfaz de consulta y supervisión del inventario general de la empresa, adaptada con privilegios de solo lectura para el rol de Super Administrador[cite: 94]. Su propósito principal no es la modificación de precios o productos, sino la auditoría de existencias y la trazabilidad del historial de interacciones por cada artículo disponible para eventos[cite: 94].
 * **Elementos de la Interfaz:**[cite: 94]
@@ -989,6 +995,7 @@ Aquí se muestran las vistas que se ven y se comportan igual en todos los usuari
      * **Acceso a Auditoría (Logs de Producto):** En la esquina inferior derecha de cada tarjeta, se incluye un botón interactivo rotulado como "Ver historial" acompañado de un icono de reloj/auditoría, el cual permite abrir el modal con el registro detallado de quién creó o modificó el producto previamente[cite: 95].
 
 #### 1.2.3.1 Módulo: Panel / Modal de Auditoría de Producto[cite: 96]
+<img width="1908" height="846" alt="image" src="https://github.com/user-attachments/assets/0603a11f-c10d-4ff3-bf93-f2f34809aaf6" />
 
 * **Descripción General:** Es un contenedor flotante de tipo panel lateral (*drawer*) que se despliega de forma dinámica al seleccionar cualquier artículo dentro del catálogo en modo de solo lectura[cite: 96]. Su propósito fundamental es garantizar la trazabilidad forense e inmutable del inventario, mostrando de manera cronológica todas las modificaciones, creaciones y actualizaciones de stock asociadas a un producto específico[cite: 96].
 * **Elementos de la Interfaz:**[cite: 96]
@@ -1006,6 +1013,7 @@ Aquí se muestran las vistas que se ven y se comportan igual en todos los usuari
 ---
 
 ### 1.2.4 Módulo: Historial de Operaciones[cite: 98]
+<img width="1895" height="852" alt="image" src="https://github.com/user-attachments/assets/b76543ab-cd3f-4e8d-b571-52ebd67c1e22" />
 
 * **Descripción General:** Es la interfaz gerencial y de consulta global destinada a auditar todas las entregas y recolecciones de mobiliario registradas en la plataforma[cite: 98]. Permite filtrar, rastrear y supervisar el flujo operativo histórico de la empresa bajo criterios temporales y de estado[cite: 98].
 * **Elementos de la Interfaz:**[cite: 98]
@@ -1024,6 +1032,7 @@ Aquí se muestran las vistas que se ven y se comportan igual en todos los usuari
 ---
 
 ### 1.2.5 Módulo: Bitácora de Auditoría del Sistema / System Logs[cite: 100]
+<img width="1903" height="832" alt="image" src="https://github.com/user-attachments/assets/c5aa072e-dea2-4ef9-a6fb-15d7714ff5c2" />
 
 * **Descripción General:** Es el módulo gerencial y de seguridad más avanzado de la plataforma, destinado a garantizar la trazabilidad forense global y el registro inmutable de todas las acciones sensibles realizadas por cualquier perfil dentro del sistema[cite: 100]. Su propósito es proteger la integridad operativa y ofrecer un monitoreo transparente de los eventos críticos[cite: 100].
 * **Elementos de la Interfaz:**[cite: 100]
@@ -1045,6 +1054,7 @@ Aquí se muestran las vistas que se ven y se comportan igual en todos los usuari
 ## 1.3 Diagrama de Arquitectura y Flujo de Navegación[cite: 102]
 
 ### 1.3.1 Diagrama de Arquitectura y Flujo de Navegación[cite: 102]
+<img width="1422" height="617" alt="image" src="https://github.com/user-attachments/assets/09e109ea-bf20-41c7-bac8-daa2fd9e2ad0" />
 
 * **Descripción General del Flujo:** La navegación del Super Administrador se rige bajo un modelo jerárquico y centralizado[cite: 102]. Tras el proceso de autenticación segura, el sistema despliega una barra de navegación superior persistente (Top Navbar) que permite el acceso transversal a los cinco módulos gerenciales y operativos de la plataforma, garantizando un control total de usuarios, inventarios, trazabilidad histórica y auditoría de seguridad[cite: 102].
 * **Mapa de Conexión de Vistas (Estructura de Transiciones):**[cite: 102]
@@ -1065,11 +1075,13 @@ Aquí se muestran las vistas que se ven y se comportan igual en todos los usuari
      * **Auditoría (Logs del Sistema):** Panel inmutable de seguridad global que registra los movimientos de todo el personal con metadatos forenses (Usuario, IP, Dispositivo, Acción y Estampa Temporal)[cite: 103].
   4. **Punto de Salida del Sistema:**[cite: 103]
      * **Acción de Cierre:** En cualquier momento, al hacer clic en el botón "Cerrar sesión" ubicado en el extremo derecho de la barra de navegación superior, el sistema destruye el token de acceso activo y redirige de retorno al usuario hacia la Pantalla de Login[cite: 103].
-## 1.3 Vistas de Administrador[cite: 104]
+    
 
-[RentFlow Admin Dashboard – Figma Make][cite: 104]
+## 1.3 Vistas de Administrador[cite: 104]
+https://www.figma.com/make/1RHFgAkr4vqkgf1hQLKGFp/RentFlow-Admin-Dashboard?fullscreen=1&t=W9eTleBX2u7xx6FP-1&code-node-id=0-6
 
 ### 1.3.1 Módulo: Panel Operativo / Dashboard[cite: 104]
+<img width="1876" height="837" alt="image" src="https://github.com/user-attachments/assets/2a8a90a7-3218-4287-9018-4f313cbf3b3d" />
 
 * **Descripción General:** Es la pantalla principal que se despliega tras la autenticación del rol de Administrador[cite: 104]. Está diseñada como un centro de control operativo y logístico en tiempo real que permite supervisar el estado diario de las entregas, recolecciones e inventario en tránsito, así como iniciar el proceso de creación de nuevas rentas de forma directa[cite: 104].
 * **Elementos de la Interfaz:**[cite: 104]
@@ -1094,6 +1106,8 @@ Aquí se muestran las vistas que se ven y se comportan igual en todos los usuari
 ---
 
 ### 1.3.2 Módulo: Catálogo Unificado de Mobiliario[cite: 106]
+<img width="1901" height="852" alt="image" src="https://github.com/user-attachments/assets/2dd9b1d1-cb00-4611-a6f9-83573561447c" />
+<img width="1891" height="837" alt="image" src="https://github.com/user-attachments/assets/ffd52f24-05af-40e8-8685-57fc80a7c20d" />
 
 * **Descripción General:** Es la interfaz central unificada del Administrador que combina las capacidades de gestión de inventario corporativo con la selección interactiva de mobiliario para el registro de nuevas rentas[cite: 106]. Permite al usuario supervisar la disponibilidad global, dar de alta nuevos productos, editar especificaciones existentes y añadir artículos al pedido en curso[cite: 106].
 * **Elementos de la Interfaz:**[cite: 106]
@@ -1115,6 +1129,7 @@ Aquí se muestran las vistas que se ven y se comportan igual en todos los usuari
   * **Selección para Renta:** Al hacer clic sobre cualquier área de la tarjeta (fuera del botón Editar), el sistema abre la vista detallada del mobiliario para definir la cantidad requerida e integrarla al carrito de la renta activa[cite: 108].
 
 #### 1.3.2.1 Módulo: Modal / Ventana de Detalle de Producto y Selección[cite: 108]
+<img width="1866" height="822" alt="image" src="https://github.com/user-attachments/assets/8c76ce04-3823-44ca-b85d-97c333dee440" />
 
 * **Descripción General:** Es un contenedor flotante de tipo modal que se despliega al hacer clic sobre la superficie de cualquier tarjeta de producto dentro del Catálogo Unificado[cite: 108, 109]. Su propósito exclusivo es mostrar la ficha técnica y la descripción detallada del mobiliario, permitiendo al Administrador seleccionar la cantidad requerida e integrarla al pedido de la renta activa sin modificar los datos del inventario[cite: 109].
 * **Elementos de la Interfaz:**[cite: 109]
@@ -1133,6 +1148,7 @@ Aquí se muestran las vistas que se ven y se comportan igual en todos los usuari
   * **Retorno Automático:** Al presionar el botón `+ Agregar a pedido`, el sistema acumula los artículos en la barra flotante del pedido activo, cierra inmediatamente el modal y conserva al usuario en la vista general del Catálogo para permitirle elegir más mobiliario de forma continua[cite: 110].
 
 #### 1.3.2.2 Módulo: Panel / Drawer de Edición de Mobiliario[cite: 110]
+<img width="1878" height="832" alt="image" src="https://github.com/user-attachments/assets/da13bc46-c751-42bb-b22a-fcff5805e8f8" />
 
 * **Descripción General:** Es un contenedor flotante de tipo panel lateral (*drawer*) que se despliega desde el margen derecho de la pantalla al hacer clic en el botón Editar de cualquier tarjeta del Catálogo Unificado[cite: 110, 111]. Su propósito exclusivo es permitir al Administrador actualizar las especificaciones, fotografías, precios diarios, descripciones y existencias físicas de un artículo previamente registrado en el sistema[cite: 111].
 * **Elementos de la Interfaz:**[cite: 111]
@@ -1157,6 +1173,7 @@ Aquí se muestran las vistas que se ven y se comportan igual en todos los usuari
   * **Persistencia Inmediata:** Al presionar Guardar cambios, el sistema actualiza el registro del inventario y refleja de inmediato los nuevos valores tanto en la vista del Administrador como en la disponibilidad para futuras rentas[cite: 112].
 
 #### 1.3.2.3 Módulo: Barra Flotante de Resumen de Pedido y Cierre[cite: 112]
+<img width="1207" height="135" alt="image" src="https://github.com/user-attachments/assets/8f400255-8721-4dad-bd62-6f900add15ce" />
 
 * **Descripción General:** Es un componente visual flotante y persistente que se despliega automáticamente en el margen inferior de la vista del Catálogo Unificado inmediatamente después de confirmar la adición de uno o más artículos al pedido desde el modal de detalle[cite: 112, 113]. Su función principal es mostrar el cálculo acumulado en tiempo real de las unidades seleccionadas y el costo diario total, proporcionando un punto de acceso directo hacia la pantalla final de captura de datos y confirmación de la renta[cite: 113].
 * **Elementos de la Interfaz:**[cite: 113]
@@ -1172,6 +1189,7 @@ Aquí se muestran las vistas que se ven y se comportan igual en todos los usuari
 * **Transición al Checkout:** Al hacer clic en Finalizar pedido, la plataforma despliega el formulario final para la captura obligatoria del nombre del cliente, teléfono a 10 dígitos, dirección de entrega, fechas/horas exactas y la comprobación de alertas de empalme logístico[cite: 111].
 
 #### 1.3.2.4 Módulo: Panel / Drawer de Alta de Nuevo Mobiliario[cite: 111]
+<img width="1901" height="833" alt="image" src="https://github.com/user-attachments/assets/31d4c4e5-b0cd-40a6-9a17-d37fa6b08356" />
 
 * **Descripción General:** Es un contenedor flotante de tipo panel lateral (*drawer*) que se despliega desde el margen derecho de la pantalla al hacer clic en el botón `+ Nuevo mobiliario` ubicado en el encabezado del Catálogo Unificado[cite: 111]. Su objetivo principal es permitir al Administrador registrar nuevos elementos en el inventario corporativo, definiendo sus especificaciones técnicas, tarifa diaria de alquiler, stock inicial disponible y la fotografía correspondiente[cite: 111].
 * **Elementos de la Interfaz:**[cite: 111]
@@ -1198,6 +1216,7 @@ Aquí se muestran las vistas que se ven y se comportan igual en todos los usuari
 ---
 
 ### 1.3.3 Módulo: Historial de Rentas[cite: 113]
+<img width="1906" height="822" alt="image" src="https://github.com/user-attachments/assets/b5e1838b-bb9c-4f5a-ba6d-e9599bf3ccf6" />
 
 * **Descripción General:** Es la interfaz de consulta y trazabilidad histórica que permite al Administrador auditar, filtrar y supervisar todos los movimientos de entregas y devoluciones de mobiliario registrados en el sistema[cite: 113]. Ofrece controles temporales dinámicos para organizar la información por periodos específicos y estados logísticos[cite: 113].
 * **Elementos de la Interfaz:**[cite: 113]
@@ -1227,6 +1246,9 @@ Aquí se muestran las vistas que se ven y se comportan igual en todos los usuari
 ---
 
 ### 1.3.4 Módulo: Finalizar Pedido / Datos de la Renta[cite: 116]
+<img width="1896" height="827" alt="image" src="https://github.com/user-attachments/assets/15fa8307-55b6-450c-aa2b-937392245e1f" />
+<img width="1863" height="848" alt="image" src="https://github.com/user-attachments/assets/c555ca6d-c35c-44f7-9c31-572ba4963249" />
+
 
 * **Descripción General:** Es la interfaz de cierre y checkout que recopila la información del cliente, la ubicación del evento y el rango temporal exacto de la operación (entrega y devolución)[cite: 116]. Permite validar en tiempo real la disponibilidad física en almacén antes de emitir la orden final[cite: 116].
 * **Elementos de la Interfaz:**[cite: 116]
@@ -1254,6 +1276,7 @@ Aquí se muestran las vistas que se ven y se comportan igual en todos los usuari
   * **Registro Exitoso:** Una vez autorizada la confirmación, se genera el folio del contrato (ej. RF-2048) y la tarea se distribuye automáticamente en la agenda del Dashboard y en el Historial[cite: 119].
 
 #### 1.3.4.1 Módulo: Modal de Advertencia de Empalme Logístico[cite: 119]
+<img width="1252" height="793" alt="image" src="https://github.com/user-attachments/assets/59aebdfa-1f81-46e5-9155-8c792b5908e8" />
 
 * **Descripción General:** Es un contenedor flotante de tipo modal de alta prioridad que se superpone dinámicamente sobre la pantalla de Finalizar Pedido en caso de que el algoritmo de disponibilidad detecte un conflicto o proximidad de horario (menor o igual a 1 hora, antes o después) con otra entrega o recolección previamente agendada[cite: 119]. Su objetivo es prevenir colapsos en la ruta de trabajo sin bloquear de forma rígida la libertad operativa del Administrador[cite: 119].
 * **Elementos de la Interfaz:**[cite: 119]
@@ -1267,314 +1290,11 @@ Aquí se muestran las vistas que se ven y se comportan igual en todos los usuari
      * **Instrucción Operativa:** Leyenda guía inferior que orienta las acciones del usuario: "Puedes modificar el horario o continuar si el equipo puede realizar ambas entregas."[cite: 119].
   3. **Botones de Decisión Operativa:**[cite: 119]
      * **Cancelar / Modificar:** Botón secundario con borde neutral que cierra la advertencia y conserva al Administrador en el formulario para realizar ajustes[cite: 119].
-### 1.2.3 Módulo: Catálogo de Mobiliario[cite: 94]
-
-* **Descripción General:** Es la interfaz de consulta y supervisión del inventario general de la empresa, adaptada con privilegios de solo lectura para el rol de Super Administrador[cite: 94]. Su propósito principal no es la modificación de precios o productos, sino la auditoría de existencias y la trazabilidad del historial de interacciones por cada artículo disponible para eventos[cite: 94].
-* **Elementos de la Interfaz:**[cite: 94]
-  1. **Encabezado y Alerta de Privilegios:**[cite: 94]
-     * Muestra el título principal "Catálogo de mobiliario" y una descripción de apoyo orientada a la supervisión: "Consulta existencias y audita el historial de cada artículo."[cite: 94]
-     * **Insignia de Restricción:** Una etiqueta distintiva en color verde suave situada en la esquina superior derecha que indica explícitamente "VISTA DE SOLO LECTURA" (reforzando que las acciones de alta o edición están reservadas al rol de Administrador)[cite: 94].
-  2. **Barra de Herramientas y Filtros Avanzados:**[cite: 94]
-     * **Buscador Inteligente:** Un campo de entrada amplio con icono de lupa y texto de apoyo: "Busca por nombre o clave, incluso con errores...", diseñado para admitir consultas tolerantes a fallos tipográficos[cite: 95].
-     * **Filtros de Stock:** Menú desplegable lateral rotulado como "Todo el stock"[cite: 95].
-     * **Botón de Exportación:** Control operativo para descargar reportes del inventario con la etiqueta "Exportar"[cite: 95].
-     * **Selector de Visualización:** Botones de alternancia rápida a la extrema derecha para cambiar entre formato de cuadrícula (Grid) o listado de filas[cite: 95].
-  3. **Cuadrícula de Artículos (Tarjetas de Mobiliario):**[cite: 95]
-     * **Contenedor Visual:** Cada ficha de producto cuenta con una fotografía real e ilustrativa del mobiliario (ej. Silla Tiffany, Mesa Redonda, Silla Crossback), identificando su clave interna en la esquina superior izquierda (ej. SL-001)[cite: 95].
-     * **Información de Stock:** Desglosa el nombre comercial del artículo, la categoría a la que pertenece (ej. SILLAS, MESAS), y una barra de progreso porcentual junto con la relación numérica de disponibilidad física en almacén (ej. 148 / 180 disponibles)[cite: 95].
-     * **Acceso a Auditoría (Logs de Producto):** En la esquina inferior derecha de cada tarjeta, se incluye un botón interactivo rotulado como "Ver historial" acompañado de un icono de reloj/auditoría, el cual permite abrir el modal con el registro detallado de quién creó o modificó el producto previamente[cite: 95].
-
-#### 1.2.3.1 Módulo: Panel / Modal de Auditoría de Producto[cite: 96]
-
-* **Descripción General:** Es un contenedor flotante de tipo panel lateral (*drawer*) que se despliega de forma dinámica al seleccionar cualquier artículo dentro del catálogo en modo de solo lectura[cite: 96]. Su propósito fundamental es garantizar la trazabilidad forense e inmutable del inventario, mostrando de manera cronológica todas las modificaciones, creaciones y actualizaciones de stock asociadas a un producto específico[cite: 96].
-* **Elementos de la Interfaz:**[cite: 96]
-  1. **Cabecera Visual del Artículo:**[cite: 96]
-     * Muestra una vista previa con la fotografía real del mobiliario seleccionado (ej. Silla Tiffany), su clave interna superpuesta (ej. SL-001) y un botón superior derecho con icono de aspa (`×`) para cerrar el panel y regresar al catálogo general[cite: 96].
-  2. **Encabezado de la Sección:**[cite: 96]
-     * Contiene la etiqueta de categoría en color verde corporativo: "AUDITORÍA DE PRODUCTO", seguida del título "Historial de Cambios del Artículo" y la descripción de apoyo: "Registro cronológico e inmutable de todas las acciones realizadas sobre este producto."[cite: 96, 97]
-  3. **Línea de Tiempo de Auditoría (Logs de Interacción):**[cite: 97]
-     * **Tarjetas de Registro Individuales:** Cada evento de modificación se despliega como una tarjeta independiente conectada por una línea de flujo vertical con iconos distintivos (ej. símbolo de suma para creación, lápiz para edición y caja para inventario)[cite: 97].
-     * **Metadatos Detallados por Registro:**[cite: 97]
-       * **Usuario responsable:** Identificación del perfil (ej. Admin_Jose o Admin_Maria)[cite: 97].
-       * **Acción ejecutada:** Descripción textual clara de la operación (ej. "Creó el producto", "Editó el nombre de 'Silla moderna' a 'Silla Tiffany'", o "Actualizó el stock disponible a 148 unidades")[cite: 97].
-       * **Información de Origen y Sello Temporal:** Metadatos técnicos que especifican el entorno de hardware/sistema operativo (ej. Windows, Computadora Linux) acompañados de la fecha y hora exacta del movimiento (ej. 27 de Julio 2026 - 02:04 PM / 8 de Agosto 2026 - 01:57 AM)[cite: 97].
-
----
-
-### 1.2.4 Módulo: Historial de Operaciones[cite: 98]
-
-* **Descripción General:** Es la interfaz gerencial y de consulta global destinada a auditar todas las entregas y recolecciones de mobiliario registradas en la plataforma[cite: 98]. Permite filtrar, rastrear y supervisar el flujo operativo histórico de la empresa bajo criterios temporales y de estado[cite: 98].
-* **Elementos de la Interfaz:**[cite: 98]
-  1. **Encabezado y Acciones Generales:**[cite: 98]
-     * Muestra la etiqueta de categoría superior en color verde: "OPERACIONES", el título principal "Historial de operaciones" y la descripción de apoyo: "Consulta todas las entregas y recolecciones registradas."[cite: 98]
-     * **Botón de Exportación:** Un control operativo en la esquina superior derecha rotulado como "Exportar reporte" con icono de descarga[cite: 98].
-  2. **Barra de Filtros y Temporalidad:**[cite: 98]
-     * **Selector de Periodo (Pestañas de Vista Rápida):** Controles interactivos para alternar la visualización del historial entre "Por Día", "Por Semana" (activo) y "Por Mes"[cite: 98].
-     * **Fecha de Consulta y Selector Dinámico:** Un campo de calendario interactivo configurado con la fecha actual (ej. 29/10/2026) y un menú desplegable complementario rotulado como "Filtrar por: Fecha de Entrega", el cual permite alternar dinámicamente el criterio de la columna temporal entre la fecha de entrega o la fecha de devolución[cite: 99].
-  3. **Panel de Metadatos de Búsqueda Activa:**[cite: 99]
-     * Desglosa de manera transparente los parámetros actuales de la consulta: Periodo seleccionado (ej. 26 oct — 1 nov, 2026), Movimientos visibles (ej. 4) y Filtro activo (ej. Fecha de Entrega)[cite: 99].
-  4. **Tabla de Datos Históricos:**[cite: 99]
-     * **Estructura de Columnas:** Organizada formalmente mediante las cabeceras Folio, Cliente, Movimiento, Fecha de Entrega (o devolución según el filtro), Total y Estado[cite: 99].
-     * **Fichas de Operación:** Cada fila detalla de forma clara el folio de la renta (ej. RNT-2948 en enlace verde corporativo), el nombre del cliente y el volumen de artículos (ej. Eventos Camelia con 132 artículos), el tipo de movimiento operativo con icono distintivo (Entrega o Recolección), la fecha exacta del evento, el costo total de la transacción (ej. $18,450), el estatus logístico mediante etiquetas en formato de pastilla (ej. verde para "Completada" o amarillo suave para "En proceso") y un botón de navegación lateral con flecha para consultar el detalle completo de la orden[cite: 99].
-
----
-
-### 1.2.5 Módulo: Bitácora de Auditoría del Sistema / System Logs[cite: 100]
-
-* **Descripción General:** Es el módulo gerencial y de seguridad más avanzado de la plataforma, destinado a garantizar la trazabilidad forense global y el registro inmutable de todas las acciones sensibles realizadas por cualquier perfil dentro del sistema[cite: 100]. Su propósito es proteger la integridad operativa y ofrecer un monitoreo transparente de los eventos críticos[cite: 100].
-* **Elementos de la Interfaz:**[cite: 100]
-  1. **Encabezado y Alerta de Seguridad:**[cite: 100]
-     * Muestra la etiqueta de categoría en color verde corporativo: "SEGURIDAD Y TRAZABILIDAD", el título principal "Bitácora de Auditoría del Sistema" y la descripción de apoyo: "Registro global de seguridad y trazabilidad de acciones sensibles en la plataforma."[cite: 100]
-     * **Insignias de Estado (Derecha):** Un distintivo que indica "LOGS INMUTABLES" junto con una barra de estado gerencial en color verde suave que confirma de forma explícita "MONITOREO ACTIVO"[cite: 100].
-  2. **Banner Informativo de Integridad:**[cite: 100]
-     * Un contenedor de seguridad con icono de escudo que notifica: "Integridad de registros protegida — Los movimientos de esta bitácora no pueden ser editados ni eliminados por ningún perfil."[cite: 101]
-  3. **Barra de Herramientas y Filtros Forenses:**[cite: 101]
-     * **Buscador por Usuario:** Campo de texto con icono de lupa y marcador de posición "Buscar por nombre de usuario..."[cite: 101].
-     * **Rango Forense (Selector Temporal):** Controles de fecha duales para establecer un periodo de auditoría específica (ej. 01/10/2026 — 29/10/2026)[cite: 101].
-     * **Botones Operativos:** El control de aplicación "Aplicar filtros" y el botón de exportación de registros rotulado como "Exportar"[cite: 101].
-  4. **Tabla de Registros Inmutables (Logs):**[cite: 101]
-     * **Estructura de Columnas:** Organizada formalmente mediante las cabeceras Folio / ID de log, Usuario / Perfil, Dispositivo / IP de origen, Acción realizada y Fecha y hora exacta[cite: 101].
-     * **Fichas de Auditoría:** Cada registro muestra un identificador único (ej. LOG-9842), el nombre del usuario y su rol asociado (ej. `admin_juan` / Administrador), los datos técnicos del dispositivo y su dirección IP (ej. Windows PC — 192.168.1.45), la descripción detallada de la acción ejecutada con un icono representativo (ej. "Modificación de stock en Catálogo: Mesa Redonda") y la estampa temporal exacta del evento (ej. 29/Oct/2026 — 02:15:30 PM)[cite: 101].
-
----
-
-## 1.3 Diagrama de Arquitectura y Flujo de Navegación[cite: 102]
-
-### 1.3.1 Diagrama de Arquitectura y Flujo de Navegación[cite: 102]
-
-* **Descripción General del Flujo:** La navegación del Super Administrador se rige bajo un modelo jerárquico y centralizado[cite: 102]. Tras el proceso de autenticación segura, el sistema despliega una barra de navegación superior persistente (Top Navbar) que permite el acceso transversal a los cinco módulos gerenciales y operativos de la plataforma, garantizando un control total de usuarios, inventarios, trazabilidad histórica y auditoría de seguridad[cite: 102].
-* **Mapa de Conexión de Vistas (Estructura de Transiciones):**[cite: 102]
-  1. **Módulo de Autenticación (Punto de Entrada):**[cite: 102]
-     * **Pantalla:** Login (Portal de Super Administrador)[cite: 102].
-     * **Acción de Transición:** El usuario ingresa las credenciales autorizadas (pre-llenadas por defecto) y presiona el botón "Iniciar sesión"[cite: 102].
-     * **Destino:** Redirección directa al Panel Principal / Dashboard[cite: 102].
-  2. **Panel Central de Control:**[cite: 102]
-     * **Pantalla:** Dashboard[cite: 102].
-     * **Interconexiones y Accesos Directos:**[cite: 102]
-       * Desde el botón superior `+ Nuevo Usuario` -> Abre de forma flotante el Modal de Creación de Cuentas[cite: 103].
-       * Desde el botón operativo "Ver agenda completa" -> Despliega la planificación semanal[cite: 103].
-       * Mediante la Top Navbar, el usuario puede trasladarse libremente a cualquiera de los siguientes módulos:[cite: 103]
-  3. **Módulos de Gestión Transversal (Navegación Superior):**[cite: 103]
-     * **Gestión de Usuarios:** Permite visualizar el listado de personal y enlaza directamente con el Modal de Alta de Nuevos Usuarios (`+ Nuevo Usuario`)[cite: 103].
-     * **Catálogo (Solo Lectura):** Permite auditar el inventario general y, al seleccionar cualquier artículo, despliega el Panel / Drawer de Auditoría de Producto (Historial de Cambios del Artículo con los logs de creación y edición por usuario)[cite: 103].
-     * **Historial de Operaciones:** Muestra la trazabilidad de entregas y recolecciones con filtros dinámicos por temporalidad (Día, Semana, Mes) y tipo de fecha (Entrega o Devolución)[cite: 103].
-     * **Auditoría (Logs del Sistema):** Panel inmutable de seguridad global que registra los movimientos de todo el personal con metadatos forenses (Usuario, IP, Dispositivo, Acción y Estampa Temporal)[cite: 103].
-  4. **Punto de Salida del Sistema:**[cite: 103]
-     * **Acción de Cierre:** En cualquier momento, al hacer clic en el botón "Cerrar sesión" ubicado en el extremo derecho de la barra de navegación superior, el sistema destruye el token de acceso activo y redirige de retorno al usuario hacia la Pantalla de Login[cite: 103].
-
----
-
-## 1.3 Vistas de Administrador[cite: 104]
-
-[RentFlow Admin Dashboard – Figma Make][cite: 104]
-
-### 1.3.1 Módulo: Panel Operativo / Dashboard[cite: 104]
-
-* **Descripción General:** Es la pantalla principal que se despliega tras la autenticación del rol de Administrador[cite: 104]. Está diseñada como un centro de control operativo y logístico en tiempo real que permite supervisar el estado diario de las entregas, recolecciones e inventario en tránsito, así como iniciar el proceso de creación de nuevas rentas de forma directa[cite: 104].
-* **Elementos de la Interfaz:**[cite: 104]
-  1. **Barra de Navegación Superior (Top Navbar):**[cite: 104]
-     * **Identidad de Marca:** Isotipo e imagotipo de RentFlow con el texto secundario "ADMINISTRACIÓN" para identificar el nivel de privilegio activo[cite: 104].
-     * **Navegación Central:** Pestañas directas a los tres módulos principales del rol: Inicio (activo con indicador visual), Catálogo y Historial[cite: 104].
-     * **Perfil de Usuario:** Tarjeta en el extremo derecho con avatar circular (AM), la etiqueta "Admin Mode / Administrador" y el botón "Cerrar sesión"[cite: 105].
-  2. **Encabezado y Acción Principal:**[cite: 105]
-     * Muestra la etiqueta "PANEL OPERATIVO", el saludo personalizado ("Buenos días, Administrador"), la fecha del día ("20 de junio") y el botón de llamada a la acción primario `+ Nueva renta` en color verde corporativo (`#087f5b`)[cite: 105].
-  3. **Tarjetas de Métricas de Operación (Resumen Superior):**[cite: 105]
-     * **Entregas programadas:** Muestra el número total de salidas de equipo agendadas para el día (ej. 3) con etiqueta indicadora "Hoy"[cite: 105].
-     * **Recolecciones pendientes:** Indica el total de retornos de mobiliario pendientes (ej. 2) con etiqueta de estado en tono naranja suave[cite: 105].
-     * **Rentas activas:** Conteo global de contratos en curso dentro del sistema (ej. 8) con etiqueta de estatus "En curso"[cite: 105].
-  4. **Sección Operativa Diaria (Tablero de Control):**[cite: 105]
-     * **Organizado en un layout de dos columnas independientes:**[cite: 105]
-       * **Columna Izquierda (Entregas de hoy):** Muestra el contador de tareas pendientes (ej. 3 pendientes)[cite: 105]. Cada tarjeta contiene icono de transporte, hora exacta de entrega (ej. 10:30, 12:00), nombre del cliente (ej. Grupo Nativa, Sofía Herrera), resumen del mobiliario solicitado junto con la colonia/ubicación (ej. 2 salas lounge · Col. Centro), y el botón operativo de un solo clic "Marcar lista"[cite: 105].
-       * **Columna Derecha (Recolecciones de hoy):** Muestra el contador de retornos programados (ej. 2 pendientes)[cite: 106]. Cada tarjeta incluye icono de retorno, hora de recolección (ej. 14:00, 19:30), cliente (ej. Eventos Aurora, Fernanda Ruiz), mobiliario a recuperar y el botón "Marcar lista"[cite: 106].
-* **Reglas de Negocio:**[cite: 106]
-  * Al hacer clic en el botón `+ Nueva renta`, el sistema redirige al usuario a la vista del Catálogo para iniciar la selección interactiva de productos[cite: 106].
-  * La acción sobre el botón "Marcar lista" actualiza inmediatamente el estado logístico de la entrega o recolección[cite: 106].
-
----
-
-### 1.3.2 Módulo: Catálogo Unificado de Mobiliario[cite: 106]
-
-* **Descripción General:** Es la interfaz central unificada del Administrador que combina las capacidades de gestión de inventario corporativo con la selección interactiva de mobiliario para el registro de nuevas rentas[cite: 106]. Permite al usuario supervisar la disponibilidad global, dar de alta nuevos productos, editar especificaciones existentes y añadir artículos al pedido en curso[cite: 106].
-* **Elementos de la Interfaz:**[cite: 106]
-  1. **Encabezado y Control de Inventario:**[cite: 107]
-     * **Título y Subtítulo:** Encabezado principal "Mobiliario para tu renta" acompañado de la descripción operativa: "Selecciona productos y administra el inventario desde un mismo lugar."[cite: 107]
-     * **Botón de Alta:** Control destacado en color verde corporativo (`#087f5b`) situado en la esquina superior derecha, rotulado como `+ Nuevo mobiliario`[cite: 107].
-  2. **Barra de Búsqueda y Filtros de Categoría:**[cite: 107]
-     * **Buscador Dinámico:** Campo de entrada amplio con icono de lupa y marcador de posición "Buscar mobiliario..."[cite: 107].
-     * **Selector de Categorías (Píldoras/Chips):** Botones de filtrado rápido para segmentar el catálogo en "Todos" (activo por defecto en verde sólido), "Sillas", "Mesas" y "Salas Lounge"[cite: 107].
-  3. **Barra de Estatus de Navegación:**[cite: 107]
-     * Leyenda indicadora que muestra el conteo de coincidencias y la instrucción de uso: "6 productos disponibles · Haz clic en una tarjeta para ver detalles"[cite: 107].
-  4. **Cuadrícula de Productos (Grid de Inventario):**[cite: 107]
-     * **Contenedor de Tarjeta:** Cada artículo exhibe una fotografía real sobre fondo limpio[cite: 107].
-     * **Metadatos del Producto:** Desglosa la categoría superior (ej. SILLAS, MESAS), una etiqueta de estatus con el stock físico (ej. 120 DISPONIBLES, 86 DISPONIBLES, 24 DISPONIBLES), el nombre comercial del mueble (ej. Silla Tiffany, Silla Plegable, Mesa redonda) y el costo por jornada (ej. $85, $55, $240 con la leyenda "renta por día")[cite: 107, 108].
-     * **Control de Edición Directa:** Un botón secundario en la parte inferior derecha de cada tarjeta rotulado como Editar con icono de lápiz[cite: 108].
-* **Comportamiento y Reglas de Negocio:**[cite: 108]
-  * **Alta de Mobiliario:** Al presionar `+ Nuevo mobiliario`, se despliega un panel lateral/modal para capturar la fotografía del producto (mediante carga o arrastre de archivo), nombre, categoría, precio diario, unidades en stock y descripción[cite: 108].
-  * **Edición de Producto:** Al hacer clic en el botón Editar, abre el formulario de modificación permitiendo actualizar la información y reemplazar la imagen del producto seleccionado[cite: 108].
-  * **Selección para Renta:** Al hacer clic sobre cualquier área de la tarjeta (fuera del botón Editar), el sistema abre la vista detallada del mobiliario para definir la cantidad requerida e integrarla al carrito de la renta activa[cite: 108].
-
-#### 1.3.2.1 Módulo: Modal / Ventana de Detalle de Producto y Selección[cite: 108]
-
-* **Descripción General:** Es un contenedor flotante de tipo modal que se despliega al hacer clic sobre la superficie de cualquier tarjeta de producto dentro del Catálogo Unificado[cite: 108, 109]. Su propósito exclusivo es mostrar la ficha técnica y la descripción detallada del mobiliario, permitiendo al Administrador seleccionar la cantidad requerida e integrarla al pedido de la renta activa sin modificar los datos del inventario[cite: 109].
-* **Elementos de la Interfaz:**[cite: 109]
-  1. **Vista Previa Visual (Sección Izquierda):** Muestra la imagen fotográfica en alta resolución y tamaño ampliado del mueble seleccionado (ej. Silla Tiffany)[cite: 109].
-  2. **Ficha Informativa (Sección Derecha):**[cite: 109]
-     * **Categoría:** Etiqueta superior en verde corporativo que identifica el grupo al que pertenece el producto (ej. Sillas)[cite: 109].
-     * **Nombre del Producto:** Encabezado principal en tipografía destacada (ej. Silla Tiffany)[cite: 109].
-     * **Descripción Comercial y Técnica:** Bloque de texto descriptivo que detalla las características de diseño, resistencia y eventos recomendados para el mobiliario ("Una pieza elegante y resistente, ideal para bodas, cenas, celebraciones...")[cite: 109].
-     * **Indicadores Métricos:** Muestra en recuadros divididos la tarifa diaria de alquiler (Renta por día: $85) y el volumen físico disponible en almacén (Stock disponible: 120 unidades)[cite: 109].
-  3. **Controles de Selección y Agregar:**[cite: 109]
-     * **Selector Numérico de Cantidad:** Control interactivo de tipo Stepper con botones de incremento y decremento (`-` / `+`) e indicador central con la leyenda de apoyo "Selecciona las unidades"[cite: 109].
-     * **Botón Principal de Acción:** Botón destacado de ancho completo en verde corporativo (`#087f5b`) rotulado como `+ Agregar a pedido · $85`, el cual actualiza el importe dinámicamente según las unidades elegidas[cite: 109, 110].
-     * **Control de Cierre:** Botón circular con icono de aspa (`×`) en la esquina superior derecha para descartar la vista sin añadir elementos al pedido[cite: 110].
-* **Comportamiento y Reglas de Negocio:**[cite: 110]
-  * **Separación de Responsabilidades:** Esta ventana es strictly para la consulta de detalles y adición a la renta; no permite modificar precios, descripciones ni existencias[cite: 110]. Para alterar esos parámetros, el usuario debe utilizar la opción independiente de Editar accesible directamente en la tarjeta del Catálogo[cite: 110].
-  * **Retorno Automático:** Al presionar el botón `+ Agregar a pedido`, el sistema acumula los artículos en la barra flotante del pedido activo, cierra inmediatamente el modal y conserva al usuario en la vista general del Catálogo para permitirle elegir más mobiliario de forma continua[cite: 110].
-
-#### 1.3.2.2 Módulo: Panel / Drawer de Edición de Mobiliario[cite: 110]
-
-* **Descripción General:** Es un contenedor flotante de tipo panel lateral (*drawer*) que se despliega desde el margen derecho de la pantalla al hacer clic en el botón Editar de cualquier tarjeta del Catálogo Unificado[cite: 110, 111]. Su propósito exclusivo es permitir al Administrador actualizar las especificaciones, fotografías, precios diarios, descripciones y existencias físicas de un artículo previamente registrado en el sistema[cite: 111].
-* **Elementos de la Interfaz:**[cite: 111]
-  1. **Cabecera del Panel:**[cite: 111]
-     * **Etiqueta Superior:** Categoría organizativa "INVENTARIO" en color verde corporativo (`#087f5b`)[cite: 111].
-     * **Título:** Encabezado principal "Editar mobiliario"[cite: 111].
-     * **Control de Cierre:** Botón circular con icono de aspa (`×`) en la esquina superior derecha para descartar la edición y cerrar el contenedor sin guardar cambios[cite: 111].
-  2. **Área de Gestión de Fotografía:**[cite: 111]
-     * Contenedor superior con la vista previa de la imagen actual del producto (ej. Silla Tiffany)[cite: 111].
-     * **Botón de Reemplazo:** Control interactivo superpuesto rotulado como Cambiar foto del producto con icono de lápiz, que permite explorar el equipo o arrastrar un nuevo archivo de imagen para actualizar la fotografía principal del inventario[cite: 111].
-  3. **Campos del Formulario de Edición (Pre-llenados):**[cite: 111]
-     * **Nombre del mobiliario:** Campo de texto editable que muestra el nombre comercial vigente (ej. "Silla Tiffany")[cite: 111].
-     * **Categoría:** Menú desplegable (*dropdown*) para reasignar la clasificación del producto entre las opciones disponibles (ej. "Sillas")[cite: 111].
-     * **Precio por día ($):** Campo de entrada numérico pre-llenado con la tarifa diaria actual de alquiler (ej. "85")[cite: 111].
-     * **Stock disponible:** Campo numérico que especifica el volumen total de unidades físicas registradas en almacén (ej. "120")[cite: 112].
-     * **Descripción:** Área de texto multilínea (*textarea*) con el detalle técnico o comercial del mueble (ej. "Silla Tiffany para eventos sociales y corporativos.")[cite: 112].
-  4. **Botones de Acción Inferiores:**[cite: 112]
-     * **Cancelar:** Botón secundario con borde sutil para desestimar la edición y regresar al Catálogo[cite: 112].
-     * **Guardar cambios:** Botón de llamada a la acción primario y destacado en color verde corporativo (`#087f5b`) con icono de verificación (`✓`), encargado de aplicar la actualización de datos e imagen en la base de datos y refrescar la tarjeta del Catálogo en tiempo real[cite: 112].
-* **Comportamiento y Reglas de Negocio:**[cite: 112]
-  * **Acceso Exclusivo de Gestión:** A diferencia del modal de detalle para rentas, este panel activa la edición de los campos del objeto en el sistema[cite: 112].
-  * **Persistencia Inmediata:** Al presionar Guardar cambios, el sistema actualiza el registro del inventario y refleja de inmediato los nuevos valores tanto en la vista del Administrador como en la disponibilidad para futuras rentas[cite: 112].
-
-#### 1.3.2.3 Módulo: Barra Flotante de Resumen de Pedido y Cierre[cite: 112]
-
-* **Descripción General:** Es un componente visual flotante y persistente que se despliega automáticamente en el margen inferior de la vista del Catálogo Unificado inmediatamente después de confirmar la adición de uno o más artículos al pedido desde el modal de detalle[cite: 112, 113]. Su función principal es mostrar el cálculo acumulado en tiempo real de las unidades seleccionadas y el costo diario total, proporcionando un punto de acceso directo hacia la pantalla final de captura de datos y confirmación de la renta[cite: 113].
-* **Elementos de la Interfaz:**[cite: 113]
-  1. **Contenedor Flotante (Floating Dock):**[cite: 113]
-     * Un panel horizontal superpuesto sobre el grid del catálogo, diseñado en color verde corporativo (`#087f5b`) con bordes curvados y sombra sutil de elevación[cite: 113].
-  2. **Panel de Información Acumulada (Extremo Izquierdo):**[cite: 113]
-     * **Contador de Unidades:** Texto secundario en color blanco que especifica el número total de muebles o piezas agregadas a la orden activa (ej. "5 artículos seleccionados")[cite: 113].
-     * **Monto Subtotal Calculado:** Importe numérico en tipografía destacada y negrita que suma la tarifa por jornada de todos los elementos añadidos (ej. "$425 por día")[cite: 113].
-  3. **Botón de Cierre de Pedido (Extremo Derecho):**[cite: 113]
-     * Un botón interactivo con formato de píldora en fondo blanco brillante, rotulado en texto verde corporativo como Finalizar pedido y acompañado de un icono de flecha hacia la derecha (->)[cite: 113].
-* **Comportamiento y Reglas de Negocio:**[cite: 113]
-  * **Retorno Fluido:** Permite que el usuario permanezca en la pantalla principal del Catálogo para seguir eligiendo más mobiliario (mesas, salas lounge, toldos) sin interrumpir su navegación ni forzarlo a salir de la vista[cite: 113].
-  * **Transición al Checkout:** Al hacer clic en Finalizar pedido, la plataforma despliega el formulario final para la captura obligatoria del nombre del cliente, teléfono a 10 dígitos, dirección de entrega, fechas/horas exactas y la comprobación de alertas de empalme logístico[cite: 111].
-
-#### 1.3.2.4 Módulo: Panel / Drawer de Alta de Nuevo Mobiliario[cite: 111]
-
-* **Descripción General:** Es un contenedor flotante de tipo panel lateral (*drawer*) que se despliega desde el margen derecho de la pantalla al hacer clic en el botón `+ Nuevo mobiliario` ubicado en el encabezado del Catálogo Unificado[cite: 111]. Su objetivo principal es permitir al Administrador registrar nuevos elementos en el inventario corporativo, definiendo sus especificaciones técnicas, tarifa diaria de alquiler, stock inicial disponible y la fotografía correspondiente[cite: 111].
-* **Elementos de la Interfaz:**[cite: 111]
-  1. **Cabecera del Panel:**[cite: 111]
-     * **Etiqueta Superior:** Categoría organizativa "INVENTARIO" redactada en verde corporativo (`#087f5b`)[cite: 111].
-     * **Título:** Encabezado principal "Nuevo mobiliario"[cite: 111].
-     * **Control de Cierre:** Botón circular con icono de aspa (x) situado en la esquina superior derecha para cancelar el proceso y cerrar el panel[cite: 112].
-  2. **Área de Carga de Fotografía (Dropzone):**[cite: 112]
-     * **Contenedor de Arrastre:** Recuadro delimitado por un borde punteado destinado a la carga de la imagen del producto[cite: 112].
-     * **Instrucción de Carga:** Texto principal en verde corporativo "Subir foto del producto" acompañado de la nota de especificación técnica: "PNG o JPG · Máximo 5 MB"[cite: 112].
-  3. **Campos del Formulario de Registro:**[cite: 112]
-     * **Nombre del mobiliario:** Campo de entrada de texto para capturar el nombre comercial con marcador de posición (*placeholder*) de ejemplo: "Ej. Mesa imperial"[cite: 112].
-     * **Categoría:** Menú desplegable (*dropdown*) para clasificar el tipo de mueble (ej. "Sillas", "Mesas", "Salas Lounge")[cite: 112].
-     * **Precio por día ($):** Campo numérico para definir la tarifa diaria por unidad[cite: 112].
-     * **Stock disponible:** Campo numérico para ingresar la cantidad de unidades físicas iniciales en almacén[cite: 112].
-     * **Descripción:** Área de texto libre (*textarea*) para redactar las especificaciones y características del mobiliario[cite: 112].
-  4. **Botones de Acción Inferiores:**[cite: 112]
-     * **Cancelar:** Botón secundario con borde neutral para descartar la información ingresada y cerrar la ventana[cite: 112].
-     * **Guardar cambios:** Botón de llamada a la acción primario en verde corporativo (`#087f5b`) con icono de verificación (v), encargado de dar de alta el objeto en la base de datos[cite: 113].
-* **Comportamiento y Reglas de Negocio:**[cite: 113]
-  * **Validación de Formularios:** Todos los campos principales (Nombre, Categoría, Precio, Stock e Imagen) son obligatorios para garantizar la integridad de los datos en las búsquedas y cálculos de rentas[cite: 113].
-  * **Actualización en Tiempo Real:** Al presionar Guardar cambios, el sistema procesa el alta, cierra el panel lateral y actualiza la cuadrícula del Catálogo en tiempo real, agregando la nueva tarjeta con su respectiva fotografía e indicando las existencias creadas[cite: 113].
-
----
-
-### 1.3.3 Módulo: Historial de Rentas[cite: 113]
-
-* **Descripción General:** Es la interfaz de consulta y trazabilidad histórica que permite al Administrador auditar, filtrar y supervisar todos los movimientos de entregas y devoluciones de mobiliario registrados en el sistema[cite: 113]. Ofrece controles temporales dinámicos para organizar la información por periodos específicos y estados logísticos[cite: 113].
-* **Elementos de la Interfaz:**[cite: 113]
-  1. **Encabezado de la Sección:**[cite: 114]
-     * **Título y Subtítulo:** Encabezado principal "Historial de rentas" acompañado de la descripción de apoyo "Consulta y filtra todos los movimientos registrados."[cite: 114]
-  2. **Barra de Herramientas y Filtros Temporales:**[cite: 114]
-     * **Selector de Periodo (Pestañas de Agregación):** Botones de alternancia para estructurar la vista en "Por Día", "Por Semana" y "Por Mes" (destacado activo en verde corporativo `#087f5b`)[cite: 114].
-     * **Campo de Fecha de Consulta:** Input interactivo con icono de calendario para establecer el punto de corte o fecha de referencia (ej. 20/06/2026)[cite: 114].
-     * **Selector de Criterio Operativo (Dropdown):** Menú desplegable para alternar la visualización de la tabla entre "Filtrar por: Fecha de Entrega" y "Filtrar por: Fecha de Devolución"[cite: 114].
-  3. **Cabecera del Listado Activo:**[cite: 114]
-     * Muestra el título correspondiente a la vista filtrada (ej. "Entregas programadas"), el conteo numérico de coincidencias ("3 operaciones para el periodo seleccionado") y una insignia identificadora con la pastilla del rango seleccionado (ej. Por Mes)[cite: 114].
-  4. **Tabla de Datos de Operaciones:**[cite: 114]
-     * **Estructura de Columnas:** Cabeceras organizadas por FOLIO, CLIENTE, FECHA DE ENTREGA (o devolución según el filtro activo), ARTÍCULOS y ESTADO[cite: 114].
-     * **Filas de Registro:**[cite: 114]
-       * **Folio:** Identificador único del contrato en negrita (ej. RF-2047, RF-2046, RF-2045)[cite: 115].
-       * **Cliente:** Nombre completo o razón social del titular del evento (ej. Sofía Herrera, Grupo Nativa, Ricardo Salas)[cite: 115].
-       * **Fecha de Entrega:** Estampa de fecha abreviada y hora asignada (ej. 20 Jun · 12:00, 19 Jun · 10:30, 18 Jun · 16:00)[cite: 115].
-       * **Artículos:** Síntesis del mobiliario asignado a la orden (ej. 40 sillas, 5 mesas; 2 salas lounge; 60 sillas Tiffany)[cite: 115].
-       * **Estado (Badges de Estatus):** Pastillas de color diferenciadas para identificar la etapa logística del pedido:[cite: 115]
-         * Por entregar (Pastilla en tono durazno/naranja)[cite: 115].
-         * En renta (Pastilla en tono azul)[cite: 115].
-         * Completada (Pastilla en tono verde suave)[cite: 115].
-* **Comportamiento y Reglas de Negocio:**[cite: 115]
-  * **Filtrado Dinámico:** Al cambiar la opción del selector "Filtrar por", la tabla actualiza inmediatamente sus filas para mostrar de forma exclusiva las operaciones de Entrega o las de Devolución, modificando también la cabecera correspondiente[cite: 115].
-  * **Consistencia de Selección:** El rango temporal activo (Por Día, Por Semana, Por Mes) recalcula automáticamente la cantidad total de operaciones mostradas y actualiza la pastilla de filtro[cite: 115].
-
----
-
-### 1.3.4 Módulo: Finalizar Pedido / Datos de la Renta[cite: 116]
-
-* **Descripción General:** Es la interfaz de cierre y checkout que recopila la información del cliente, la ubicación del evento y el rango temporal exacto de la operación (entrega y devolución)[cite: 116]. Permite validar en tiempo real la disponibilidad física en almacén antes de emitir la orden final[cite: 116].
-* **Elementos de la Interfaz:**[cite: 116]
-  1. **Encabezado y Control de Retorno:**[cite: 116]
-     * **Etiqueta y Título:** Muestra la categoría superior "FINALIZAR PEDIDO", el título principal "Datos de la renta" y el botón de acción en la esquina superior derecha x Volver al catálogo para regresar a la selección de inventario[cite: 116, 117].
-  2. **Bloque 1: Datos del Cliente (Formulario Superior):**[cite: 117]
-     * **Cabecera de Módulo:** Icono de usuario en verde corporativo (`#087f5b`), título "Datos del cliente" y subtítulo "Información de contacto y entrega."[cite: 117]
-     * **Nombre del cliente (*):** Campo de entrada obligatorio para el titular del contrato (ej. "Laura Méndez")[cite: 117].
-     * **Teléfono (*):** Campo numérico obligatorio a 10 dígitos (ej. "5512345678")[cite: 117].
-     * **Correo electrónico:** Campo de entrada opcional (ej. "correo@ejemplo.com")[cite: 117].
-     * **Dirección de entrega (*):** Campo amplio con icono de ubicación (pin) para el domicilio del evento (ej. "Av. Jardines 420, Col. Del Valle, Monterrey, N.L.")[cite: 117].
-  3. **Bloque 2: Fechas y Horas (Formulario Inferior):**[cite: 117]
-     * **Cabecera de Módulo:** Icono de calendario en contenedor circular verde (`#087f5b`), título "Fechas y horas" y la leyenda explicativa "Ambos horarios son obligatorios."[cite: 117]
-     * **Fecha y hora de entrega (*):** Selector dinámico con calendario/reloj integrado para definir el momento exacto en que el equipo debe llegar a la ubicación (ej. 20/06/2026 12:30 p.m.)[cite: 117].
-     * **Fecha y hora de devolución (*):** Selector dinámico con calendario/reloj integrado para programar la recolección del mobiliario (ej. 20/06/2026 08:00 p.m.)[cite: 117].
-  4. **Botón Principal de Acción (Procesamiento de Orden):**[cite: 118]
-     * **Confirmar Renta:** Botón primario de ancho completo destacado en verde corporativo (`#087f5b`) con icono de verificación (v), rotulado como v Confirmar renta[cite: 118].
-  5. **Panel Lateral de Resumen del Pedido (Persistente):**[cite: 118]
-     * **Resumen de Contenido:** Título "Resumen del pedido", miniatura fotográfica del producto, costo unitario (ej. Silla Tiffany $85 c/u) y control numérico (Stepper) para ajustar piezas (ej. 4)[cite: 118].
-     * **Total Acumulado:** Muestra el costo total por jornada (ej. Total por día: $340)[cite: 118].
-     * **Insignia de Validación:** Pastilla informativa en verde suave que ratifica: v Inventario disponible para estas fechas[cite: 118].
-* **Comportamiento y Reglas de Negocio:**[cite: 118]
-  * **Doble Validación Temporal (Entrega y Devolución):** El sistema requiere obligatoriamente ambas fechas y horas para calcular el tiempo de ocupación del inventario y verificar que los productos no se traslapen con otros eventos programados[cite: 118].
-  * **Control de Empalmes y Confirmación:** Al presionar el botón v Confirmar renta, la plataforma valida las horas ingresadas contra la agenda global[cite: 118]. Si existe un conflicto de horarios con otra entrega o recolección en un rango menor a 1 hora, despliega la alerta de advertencia ("ATENCIÓN: POSIBLE EMPALME"), permitiendo al Administrador modificar el horario o autorizar la operación de todos modos[cite: 118].
-  * **Registro Exitoso:** Una vez autorizada la confirmación, se genera el folio del contrato (ej. RF-2048) y la tarea se distribuye automáticamente en la agenda del Dashboard y en el Historial[cite: 119].
-
-#### 1.3.4.1 Módulo: Modal de Advertencia de Empalme Logístico[cite: 119]
-
-* **Descripción General:** Es un contenedor flotante de tipo modal de alta prioridad que se superpone dinámicamente sobre la pantalla de Finalizar Pedido en caso de que el algoritmo de disponibilidad detecte un conflicto o proximidad de horario (menor o igual a 1 hora, antes o después) con otra entrega o recolección previamente agendada[cite: 119]. Su objetivo es prevenir colapsos en la ruta de trabajo sin bloquear de forma rígida la libertad operativa del Administrador[cite: 119].
-* **Elementos de la Interfaz:**[cite: 119]
-  1. **Cabecera e Iconografía de Alerta:**[cite: 119]
-     * **Icono de Advertencia:** Símbolo gráfico de triángulo de precaución sobre un contenedor circular amarillo suave (`#fffbe6`)[cite: 119].
-     * **Etiqueta Categórica:** Texto superior en negrita de color naranja de alerta (`#d86b00`): "ATENCIÓN: POSIBLE EMPALME"[cite: 119].
-     * **Título Principal:** Encabezado descriptivo en tipografía destacada "Hay otra entrega cercana"[cite: 119].
-  2. **Cuerpo Informativo y Ficha de Conflicto:**[cite: 119]
-     * **Texto de Diagnóstico:** Mensaje explicativo que calcula y notifica el margen de tiempo exacto entre ambas operaciones (ej. "Ya existe una entrega programada a las 12:00 PM, solo 30 minutos antes de esta renta.")[cite: 119].
-     * **Ficha de Evento Existente (Tarjeta de Empalme):** Recuadro destacado sobre fondo amarillo cálido que incluye un icono de reloj, el título "Entrega existente" y la síntesis con la hora y ubicación del compromiso previo (ej. 12:00 PM · Col. Jardines)[cite: 119].
-     * **Instrucción Operativa:** Leyenda guía inferior que orienta las acciones del usuario: "Puedes modificar el horario o continuar si el equipo puede realizar ambas entregas."[cite: 119].
-  3. **Botones de Decisión Operativa:**[cite: 119]
-     * **Cancelar / Modificar:** Botón secundario con borde neutral que cierra la advertencia y conserva al Administrador en el formulario para reajustar los campos de hora o fecha[cite: 120].
-     * **Aceptar de todos modos:** Botón de llamada a la acción primario en color naranja sólido (`#d86b00`), diseñado para forzar la confirmación de la renta bajo la responsabilidad del usuario[cite: 120].
-* **Comportamiento y Reglas de Negocio:**[cite: 120]
-  * **Ventana de Proximidad Logística (Algoritmo ±1 Hora):** El sistema evalúa automáticamente la Fecha y Hora de Entrega y la Fecha y Hora de Devolución de la nueva renta contra la base de datos global de contratos[cite: 120]. Si existe cualquier tarea programada dentro del umbral crítico de 60 minutos (antes o después), se interrumpe el guardado automático para desplegar esta alerta[cite: 120].
-  * **Anulación Manual de Alerta (Override):** Si el Administrador cuenta con personal suficiente o la cercanía geográfica entre ambas colonias lo permite, la opción Aceptar de todos modos autoriza la creación del registro, asignando el folio correspondiente y distribuyendo la nueva tarea en el Dashboard[cite: 120].
-  * **Modificación Preventiva:** Si se elige Cancelar / Modificar, el modal se destruye sin guardar cambios, permitiendo seleccionar un nuevo horario que no comprometa la capacidad del equipo de repartidores[cite: 120].
 
 ---
 
 ### 1.3.4.2 Módulo: Pantalla de Confirmación de Renta / Pedido Registrado[cite: 121]
+<img width="1898" height="836" alt="image" src="https://github.com/user-attachments/assets/88bdef70-b85f-40a0-9a96-154b394db008" />
 
 * **Descripción General:** Es la pantalla de cierre y retroalimentación visual positiva que se despliega inmediatamente después de procesar la creación de una orden, ya sea autorizada directamente o tras confirmar la exención en el modal de empalme logístico[cite: 121]. Su función es certificar la asignación del número de contrato (folio), validar la actualización en tiempo real de las existencias en almacén y proporcionar un acceso directo de retorno al centro de control operativo[cite: 121].
 * **Elementos de la Interfaz:**[cite: 121]
@@ -1601,6 +1321,7 @@ Aquí se muestran las vistas que se ven y se comportan igual en todos los usuari
 ---
 
 ### 1.3.5 Mapa de Conexión de Vistas (Estructura de Transiciones)[cite: 123]
+<img width="2175" height="1244" alt="image" src="https://github.com/user-attachments/assets/ec670e87-7a69-4f99-b454-383d4a7447d1" />
 
 * **Portal de Acceso (Login Empleado)**[cite: 123]
   * **Pantalla:** Login (Solo para Empleados)[cite: 123]
@@ -1631,9 +1352,12 @@ Aquí se muestran las vistas que se ven y se comportan igual en todos los usuari
 
 ## 1.4 Vistas de Empleado/Ayudante[cite: 125]
 
-[RentFlow empleados – Figma Make][cite: 125]
+https://www.figma.com/make/kexZmmhWIxSB7MvojqXDBh/RentFlow-empleados?fullscreen=1&t=q5bVyQ9KtfOK369N-1&code-node-id=0-6
 
 ### 1.4.1 Módulo: Panel Operativo / Inicio[cite: 125]
+<img width="1873" height="838" alt="image" src="https://github.com/user-attachments/assets/9a717a9d-4452-4154-b38e-b4ae551e16c8" />
+<img width="1887" height="846" alt="image" src="https://github.com/user-attachments/assets/8e1033f4-50f3-4010-8f9c-864517a818c8" />
+
 
 * **Descripción General:** Es el centro de control logístico e informativo para el rol de Empleado, diseñado para gestionar tanto las tareas inmediatas de la jornada activa como para consultar la planificación temporal del resto de la semana a través de un carrusel dinámico de desplazamiento horizontal[cite: 127].
 * **Elementos de la Interfaz:**[cite: 127]
@@ -1670,6 +1394,10 @@ Aquí se muestran las vistas que se ven y se comportan igual en todos los usuari
 
 ### 1.4.2 Módulo: Selección de Mobiliario / Catálogo de Nueva Renta[cite: 129]
 
+<img width="1873" height="837" alt="image" src="https://github.com/user-attachments/assets/47f40916-b618-4e00-a83b-badcd62cf2bf" />
+<img width="1853" height="833" alt="image" src="https://github.com/user-attachments/assets/12ce0893-a64f-4fe4-9cfa-3088fc1191ab" />
+
+
 * **Descripción General:** Es la interfaz de exploración y selección de inventario diseñada para el rol de Empleado[cite: 129]. Permite consultar la disponibilidad física de mobiliario en almacén, aplicar filtros dinámicos por categoría o texto, y seleccionar los artículos requeridos para estructurar una nueva renta de forma ágil y sin acceso a funciones administrativas[cite: 129].
 funciones de edición de catálogo.
 
@@ -1696,6 +1424,8 @@ funciones de edición de catálogo.
 ---
 
 #### 1.4.3.1 Módulo: Detalle y Selección de Producto
+<img width="1863" height="821" alt="image" src="https://github.com/user-attachments/assets/e2d610ba-9c47-4148-833b-e6c8465fe927" />
+
 
 * **Descripción General:** Es la interfaz detallada de ficha técnica y especificación de cantidad que se despliega al seleccionar un artículo dentro del Catálogo de Renta. Permite al empleado revisar la descripción comercial, verificar las tarifas y el volumen disponible en almacén, y configurar el número de unidades que se integrarán al pedido activo.
 * **Elementos de la Interfaz:**
@@ -1722,6 +1452,8 @@ funciones de edición de catálogo.
 ---
 
 #### 1.4.3.2 Módulo: Barra Flotante de Resumen de Pedido
+<img width="967" height="112" alt="image" src="https://github.com/user-attachments/assets/832c941b-ccd3-4317-b33b-805625c654a5" />
+
 
 * **Descripción General:** Es un componente de interfaz persistente de tipo contenedor flotante (*floating dock*) que se despliega dinámicamente en el margen inferior de la vista de Catálogo inmediatamente después de incorporar un producto a la orden. Su objetivo es ofrecer visibilidad constante del volumen total de piezas seleccionadas y el importe acumulado por jornada, sirviendo como control de avance hacia la captura de datos del pedido sin interrumpir la exploración del inventario.
 * **Elementos de la Interfaz:**
@@ -1742,6 +1474,8 @@ funciones de edición de catálogo.
 ---
 
 ### 1.4.3 Módulo: Captura de Datos del Pedido / Checkout
+<img width="1875" height="838" alt="image" src="https://github.com/user-attachments/assets/32ee9a84-9ca0-4eba-83ea-20c3dd77a3ae" />
+<img width="1902" height="811" alt="image" src="https://github.com/user-attachments/assets/d7eed55f-949e-4a42-a877-23e37b8cc666" />
 
 * **Descripción General:** Es la interfaz de registro y cierre de *checkout* que se despliega al seleccionar el botón de avance desde la barra flotante o el menú de navegación. Su función es estructurar la captura de información mediante una secuencia numerada de dos pasos (Fechas/Horas y Datos del Cliente), coordinando la logística de entrega y calculando el importe final de la renta antes de ejecutar la validación de inventario en servidor.
 * **Elementos de la Interfaz:**
@@ -1779,6 +1513,9 @@ funciones de edición de catálogo.
 
 #### 1.4.3.1 Módulo: Modal de Advertencia de Empalme Logístico[cite: 141]
 
+<img width="1827" height="813" alt="image" src="https://github.com/user-attachments/assets/b4213be6-e179-4580-9475-c9a5063549ec" />
+
+
 * **Descripción General:** Es una interfaz emergente de validación y control de riesgo que se activa de forma automática sobre el formulario de *Datos del pedido* al momento de presionar el botón de confirmación[cite: 141]. Su propósito es alertar al personal operativo cuando la hora de entrega o devolución programada coincide o se encuentra dentro de un margen crítico de proximidad ($\le 1$ hora, antes o después) con otra tarea existente en la agenda, evitando la saturación de las rutas de trabajo sin bloquear arbitrariamente la operación[cite: 141].
 * **Elementos de la Interfaz:**[cite: 141]
   1. **Cabecera e Iconografía de Alerta:**[cite: 141]
@@ -1801,6 +1538,7 @@ funciones de edición de catálogo.
 ---
 
 #### 1.4.4 Módulo: Pantalla de Confirmación de Renta / Pedido Registrado[cite: 144]
+<img width="1876" height="821" alt="image" src="https://github.com/user-attachments/assets/2cc79d9f-7183-4477-aa27-7a4a314afa37" />
 
 * **Descripción General:** Es la interfaz de cierre y retroalimentación visual positiva que se despliega inmediatamente después de completar el proceso de checkout (ya sea por confirmación directa o tras autorizar la excepción en el modal de empalme logístico)[cite: 144]. Su función principal es notificar al personal operativo el registro exitoso de la orden, desplegar el número de folio correlativo generado por el sistema y proporcionar una acción directa para restablecer la sesión y regresar al panel de control[cite: 144].
 * **Elementos de la Interfaz:**[cite: 144]
@@ -1824,6 +1562,7 @@ funciones de edición de catálogo.
 ---
 
 ### 1.4.5 Arquitectura de Navegación y Diagrama de Flujo[cite: 147]
+<img width="885" height="1149" alt="image" src="https://github.com/user-attachments/assets/e9ffeaeb-25a3-4be4-bc0c-eae81d8bc9c0" />
 
 El flujo operativo del rol **Empleado** en **RentFlow** está estructurado como un sistema guiado y desacoplado de las capacidades administrativas[cite: 148]. Su arquitectura prioriza el cumplimiento de tareas logísticas en campo/mostrador y la captura ágil de pedidos sin alterar el inventario global ni gestionar usuarios[cite: 148].
 
@@ -2101,6 +1840,7 @@ Para mantener la consistencia de la información, se establecen las siguientes c
 > **Nota:** La disponibilidad de mobiliario no se almacenará en una entidad independiente. Se calculará a partir del inventario total y de los detalles de las rentas que se encuentren vigentes para el intervalo consultado.[cite: 160]
 
 ---
+<img width="835" height="554" alt="image" src="https://github.com/user-attachments/assets/d16b94a7-3535-4926-a3f2-bb8673b7e87f" />
 
 ### 4.3 Arquitectura de Software y Capas del Sistema (Cliente-Servidor / REST API)[cite: 161]
 
@@ -2142,6 +1882,7 @@ Este diagrama documenta la arquitectura de software del sistema RentFlow, organi
 4. **Persistencia Transaccional:** La capa DAL consulta la base de datos MySQL; si el stock es suficiente y se autoriza el pedido, registra la cabecera de la renta y sus renglones de detalle en una misma transacción.[cite: 163]
 5. **Respuesta Estructurada:** El servidor retorna una respuesta con código de estado HTTP estándar (`200 OK`, `201 Created`, `400 Bad Request`, `409 Conflict`) y el payload JSON de confirmación.[cite: 163]
 6. **Renderizado en Cliente:** Angular actualiza la vista en tiempo real (ej. despliega la pantalla de Pedido Registrado o el modal de Empalme Logístico).[cite: 163]
+<img width="741" height="1075" alt="image" src="https://github.com/user-attachments/assets/154401b9-32fe-45d0-ba9a-f3ab66158f26" />
 
 ---
 
@@ -2164,6 +1905,7 @@ Este diagrama de secuencia detalla la interacción cronológica y el intercambio
    * Inserta cada producto seleccionado en la tabla `detalle_renta` congelando el precio histórico por día.[cite: 166]
    * Confirma la transacción con un `COMMIT`.[cite: 166]
 6. **Respuesta y Cierre:** El servidor responde con `201 Created` y el objeto de la renta confirmada. Angular vacía la memoria temporal del pedido y redirige a la vista de Pedido Registrado.[cite: 166]
+<img width="1808" height="1476" alt="image" src="https://github.com/user-attachments/assets/66df3cc7-0281-4703-8296-05ca0be40341" />
 
 ---
 
@@ -2233,3 +1975,149 @@ El presente diccionario de datos documenta detalladamente la estructura de persi
 | `cantidad` | INT | — | NOT NULL, CHECK (cantidad > 0) | Número de piezas o unidades reservadas de este artículo. |
 | `precio_unitario_dia` | DECIMAL(10,2) | — | NOT NULL | Fotografía histórica de la tarifa diaria al momento de confirmar el pedido. |
 | `subtotal_dia` | DECIMAL(10,2) | — | NOT NULL | Calculado mediante `cantidad` * `precio_unitario_dia`. |
+
+## 5. Guía de Instalación, Configuración e Integración del Entorno (.env)
+
+Esta sección establece los pasos secuenciales necesarios para clonar, configurar y desplegar el sistema **RentFlow** en un entorno de desarrollo local, junto con las políticas obligatorias de seguridad para el manejo de credenciales y variables de entorno.
+
+---
+
+### 5.1 Requisitos Previos del Sistema
+
+Asegúrate de tener instaladas las siguientes herramientas en tu equipo de cómputo antes de iniciar el proceso:
+
+* **Node.js**: v18.0.0 o superior (LTS recomendado).
+* **npm**: v9.0.0 o superior.
+* **Angular CLI**: v16.0.0 o superior (`npm install -g @angular/cli`).
+* **MySQL Server**: v8.0 o superior (gestor local o herramientas como XAMPP / MySQL Workbench).
+* **Git**: v2.30.0 o superior.
+
+---
+
+### 5.2 Clonado del Repositorio
+
+Abre la terminal de tu sistema operativo y ejecuta el comando de clonado:
+
+```bash
+git clone [https://github.com/Melany190619/RentFlow-Systems.git](https://github.com/Melany190619/RentFlow-Systems.git)
+cd RentFlow-Systems
+```
+
+---
+
+### 5.3 Reglas y Políticas de Seguridad del Archivo de Entorno (.env)
+
+Para proteger las credenciales del sistema y evitar filtraciones de seguridad en el repositorio de GitHub, se deben acatar las siguientes normas de desarrollo:
+
+#### Reglas Obligatorias de Proyecto:
+
+1. **Exclusión de Git Incondicional**: El archivo `.env` real **NUNCA** se sube a GitHub. Debe estar estrictamente registrado dentro del archivo `.gitignore` raíz y del directorio del backend.
+2. **Mantenimiento de Plantilla (.env.example)**: Si durante el desarrollo se crea una nueva variable de entorno (ej. un nuevo parámetro o clave de servicio), es obligatorio agregarla al archivo `.env.example` con un valor genérico o falso.
+3. **Prohibición de Credenciales Quemadas (Hardcoding)**: Ningún archivo `.ts` o `.js` del código fuente debe contener contraseñas, URLs de base de datos o secretos de tokens explícitos. Todo valor sensible debe consumirse a través de `process.env.NOMBRE_VARIABLE`.
+4. **Protección de Firmas JWT**: La clave secreta de autenticación (`JWT_SECRET`) debe ser una cadena extensa de caracteres aleatorios en entornos de desarrollo y mantenerse completamente aislada de repositorios públicos.
+
+#### Estructura del Archivo .env (Backend)
+
+Crea un archivo llamado `.env` dentro del directorio `/backend` basándote en la plantilla de ejemplo:
+
+```env
+# ===================================================
+# CONFIGURACIÓN DEL SERVIDOR HTTP (Node.js / Express)
+# ===================================================
+PORT=3000
+NODE_ENV=development
+CORS_ORIGIN=http://localhost:4200
+
+# ===================================================
+# BASE DE DATOS RELACIONAL (MySQL 8.0 / InnoDB)
+# ===================================================
+DB_HOST=localhost
+DB_PORT=3306
+DB_USER=root
+DB_PASSWORD=tu_contraseña_mysql_aqui
+DB_NAME=rentflow_db
+
+# ===================================================
+# AUTENTICACIÓN Y SEGURIDAD (JWT - JSON Web Tokens)
+# ===================================================
+JWT_SECRET=rentflow_secret_key_2026_super_secure_key
+JWT_EXPIRES_IN=8h
+```
+
+---
+
+### 5.4 Instalación y Configuración del Backend (Node.js + Express)
+
+1. Ingresa a la carpeta del servidor:
+   ```bash
+   cd backend
+   ```
+
+2. Instala las dependencias y paquetes de Node.js:
+   ```bash
+   npm install
+   ```
+
+3. Genera tu archivo `.env` a partir del archivo de ejemplo:
+   * **En Windows (PowerShell / CMD):**
+     ```cmd
+     copy .env.example .env
+     ```
+   * **En Linux / macOS / Git Bash:**
+     ```bash
+     cp .env.example .env
+     ```
+
+4. Abre el archivo `.env` recién generado y actualiza los valores de `DB_USER` y `DB_PASSWORD` con tus credenciales locales de MySQL.
+
+---
+
+### 5.5 Configuración e Importación de la Base de Datos (MySQL 8.0)
+
+1. Asegúrate de que el servicio de MySQL Server esté iniciado en tu equipo.
+2. Abre tu cliente SQL (Workbench, DBeaver o la CLI de MySQL) y crea la base de datos vacía:
+   ```sql
+   CREATE DATABASE IF NOT EXISTS rentflow_db CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+   ```
+3. Ejecuta los scripts de arquitectura (Tablas en 3FN y Registros Iniciales) desde la terminal:
+   ```bash
+   # Importación del esquema DDL
+   mysql -u root -p rentflow_db < database/schema.sql
+   
+   # Importación de catálogos y datos iniciales DML
+   mysql -u root -p rentflow_db < database/seeds.sql
+   ```
+
+---
+
+### 5.6 Instalación y Configuración del Frontend (Angular Standalone)
+
+1. Regresa a la carpeta raíz e ingresa al directorio del cliente web:
+   ```bash
+   cd ../frontend
+   ```
+
+2. Instala los paquetes de Angular, RxJS y Tailwind CSS:
+   ```bash
+   npm install
+   ```
+
+---
+
+### 5.7 Despliegue y Ejecución Local del Sistema
+
+Para levantar la aplicación completa en modo de desarrollo local, se deben iniciar ambos componentes simultáneamente en terminales independientes:
+
+#### Terminal 1: Servidor Backend (API REST)
+```bash
+cd backend
+npm run dev
+```
+*El backend se ejecutará en `http://localhost:3000` y confirmará la conexión exitosa a la base de datos MySQL.*
+
+#### Terminal 2: Cliente Frontend (Angular Web App)
+```bash
+cd frontend
+ng serve
+```
+*La interfaz interactiva se compilará y estará disponible en tu navegador en `http://localhost:4200`.*
