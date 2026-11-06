@@ -1913,68 +1913,134 @@ Este diagrama de secuencia detalla la interacción cronológica y el intercambio
 
 El presente diccionario de datos documenta detalladamente la estructura de persistencia relacional del sistema RentFlow.[cite: 166] Define los atributos, tipos de datos, restricciones de integridad referencial, llaves primarias, llaves foráneas y descripciones funcionales para cada una de las entidades del esquema en Tercera Forma Normal (3FN).[cite: 166, 167]
 
-#### 1. Tabla: usuarios[cite: 167]
+# Modelo de Base de Datos - RentFlow Systems
 
-* **Descripción:** Almacena los registros de acceso y cuentas de usuario del sistema (Administradores y Empleados), gestionando la autenticación y el nivel de privilegios.[cite: 167]
+## 1. Tabla: `roles`
 
-| Campo | Tipo de Dato | Llave | Restricciones | Descripción |
-| :--- | :--- | :---: | :--- | :--- |
-| `id_usuario` | INT | PK | AUTO_INCREMENT, NOT NULL | Identificador único numérico del usuario. |
-| `nombre` | VARCHAR(100) | — | NOT NULL | Nombre completo del Administrador o Empleado. |
-| `email` | VARCHAR(100) | — | UNIQUE, NOT NULL | Correo electrónico de acceso utilizado como credencial principal. |
-| `password_hash` | VARCHAR(255) | — | NOT NULL | Hash cifrado de la contraseña de acceso (ej. bcrypt). |
-| `rol` | ENUM('ADMINISTRADOR', 'EMPLEADO') | — | NOT NULL | Perfil de seguridad que define los permisos dentro de la aplicación. |
-| `estatus` | TINYINT(1) | — | NOT NULL, DEFAULT 1 | Indicador de cuenta activa (1 = Activo, 0 = Inactivo/Baja). |
+| Campo         | Tipo de dato | Restricciones                | Descripción                               |
+| ------------- | ------------ | ---------------------------- | ----------------------------------------- |
+| `id_rol`      | INT          | PK, AUTO_INCREMENT, NOT NULL | Identificador del rol                     |
+| `nombre`      | VARCHAR(50)  | UNIQUE, NOT NULL             | Nombre del rol                            |
+| `descripcion` | VARCHAR(150) | NULL                         | Descripción del rol                       |
+| `estatus`     | TINYINT(1)   | NOT NULL, DEFAULT 1          | Estado del rol (1 = activo, 0 = inactivo) |
 
-#### 2. Tabla: categorias[cite: 168]
+## 2. Tabla: `usuarios`
 
-* **Descripción:** Catálogo maestro para la clasificación y agrupación lógica del mobiliario (Sillas, Mesas, Toldos, Salas Lounge), facilitando la segmentación y filtrado dinámico.[cite: 168]
+| Campo                 | Tipo de dato | Restricciones                       | Descripción                                   |
+| --------------------- | ------------ | ----------------------------------- | --------------------------------------------- |
+| `id_usuario`          | INT          | PK, AUTO_INCREMENT, NOT NULL        | Identificador del usuario                     |
+| `nombre`              | VARCHAR(100) | NOT NULL                            | Nombre del usuario                            |
+| `email`               | VARCHAR(100) | UNIQUE, NOT NULL                    | Correo electrónico                            |
+| `password_hash`       | VARCHAR(255) | NOT NULL                            | Contraseña almacenada mediante hash           |
+| `id_rol`              | INT          | FK, NOT NULL                        | Referencia al rol del usuario                 |
+| `estatus`             | TINYINT(1)   | NOT NULL, DEFAULT 1                 | Estado del usuario (1 = activo, 0 = inactivo) |
+| `fecha_creacion`      | DATETIME     | NOT NULL, DEFAULT CURRENT_TIMESTAMP | Fecha de creación                             |
+| `fecha_actualizacion` | DATETIME     | NULL                                | Fecha de última actualización                 |
 
-| Campo | Tipo de Dato | Llave | Restricciones | Descripción |
-| :--- | :--- | :---: | :--- | :--- |
-| `id_categoria` | INT | PK | AUTO_INCREMENT, NOT NULL | Identificador único numérico de la categoría. |
-| `nombre` | VARCHAR(50) | — | UNIQUE, NOT NULL | Denominación única de la categoría comercial de muebles. |
+**Relación:** `id_rol` → `roles.id_rol`
 
-#### 3. Tabla: mobiliario[cite: 168]
+## 3. Tabla: `categorias`
 
-* **Descripción:** Registra el inventario corporativo de productos disponibles para alquiler, sus tarifas vigentes por día, especificaciones y volumen físico en almacén.[cite: 168]
+| Campo          | Tipo de dato | Restricciones                | Descripción                                       |
+| -------------- | ------------ | ---------------------------- | ------------------------------------------------- |
+| `id_categoria` | INT          | PK, AUTO_INCREMENT, NOT NULL | Identificador de la categoría                     |
+| `nombre`       | VARCHAR(50)  | UNIQUE, NOT NULL             | Nombre de la categoría                            |
+| `estatus`      | TINYINT(1)   | NOT NULL, DEFAULT 1          | Estado de la categoría (1 = activa, 0 = inactiva) |
 
-| Campo | Tipo de Dato | Llave | Restricciones | Descripción |
-| :--- | :--- | :---: | :--- | :--- |
-| `id_mobiliario` | INT | PK | AUTO_INCREMENT, NOT NULL | Identificador único numérico del producto de mobiliario. |
-| `id_categoria` | INT | FK | NOT NULL | Referencia a `categorias(id_categoria)`. Clasifica el mueble. |
-| `telefono` | VARCHAR(10) | — | NOT NULL | Número telefónico principal a 10 dígitos para coordinación logística. |
-| `email` | VARCHAR(100) | — | NULL | Dirección opcional de correo electrónico para envío de notificaciones. |
+## 4. Tabla: `mobiliario`
 
-#### 5. Tabla: rentas[cite: 169]
+| Campo                 | Tipo de dato  | Restricciones                       | Descripción                                      |
+| --------------------- | ------------- | ----------------------------------- | ------------------------------------------------ |
+| `id_mobiliario`       | INT           | PK, AUTO_INCREMENT, NOT NULL        | Identificador del mobiliario                     |
+| `id_categoria`        | INT           | FK, NOT NULL                        | Referencia a la categoría                        |
+| `nombre`              | VARCHAR(100)  | NOT NULL                            | Nombre del mobiliario                            |
+| `descripcion`         | TEXT          | NULL                                | Descripción del mobiliario                       |
+| `precio_dia`          | DECIMAL(10,2) | NOT NULL, CHECK (precio_dia >= 0)   | Precio de renta por día                          |
+| `stock_total`         | INT           | NOT NULL, CHECK (stock_total >= 0)  | Cantidad total de mobiliario                     |
+| `imagen_url`          | VARCHAR(255)  | NULL                                | Ruta o URL de la imagen                          |
+| `estatus`             | TINYINT(1)    | NOT NULL, DEFAULT 1                 | Estado del mobiliario (1 = activo, 0 = inactivo) |
+| `fecha_creacion`      | DATETIME      | NOT NULL, DEFAULT CURRENT_TIMESTAMP | Fecha de creación                                |
+| `fecha_actualizacion` | DATETIME      | NULL                                | Fecha de última actualización                    |
 
-* **Descripción:** Entidad transaccional de cabecera que representa cada contrato de arrendamiento registrado, consolidando las fechas de entrega/devolución, el domicilio y el estado operativo.[cite: 169]
+**Relación:** `id_categoria` → `categorias.id_categoria`
 
-| Campo | Tipo de Dato | Llave | Restricciones | Descripción |
-| :--- | :--- | :---: | :--- | :--- |
-| `id_renta` | INT | PK | AUTO_INCREMENT, NOT NULL | Identificador interno único del contrato de renta. |
-| `folio` | VARCHAR(20) | — | UNIQUE, NOT NULL | Clave alfanumérica única visible para el cliente (ej. RF-2048). |
-| `id_cliente` | INT | FK | NOT NULL | Referencia a `clientes(id_cliente)`. Titular de la orden. |
-| `id_usuario` | INT | FK | NOT NULL | Referencia a `usuarios(id_usuario)`. Empleado/Admin que capturó la orden. |
-| `fecha_hora_entrega` | DATETIME | — | NOT NULL | Estampa de fecha y hora exacta programada para la entrega en el sitio. |
-| `fecha_hora_devolucion` | DATETIME | — | NOT NULL | Estampa de fecha y hora exacta programada para la recolección del equipo. |
-| `direccion_entrega` | TEXT | — | NOT NULL | Dirección completa de la locación o domicilio del evento. |
-| `total_por_dia` | DECIMAL(10,2) | — | NOT NULL | Importe total acumulado por jornada de todos los artículos incluidos. |
-| `estatus` | ENUM('POR_ENTREGAR', 'EN_RENTA', 'COMPLETADA', 'CANCELADA') | — | NOT NULL, DEFAULT 'POR_ENTREGAR' | Etapa del ciclo de vida logístico del pedido. |
-| `fecha_registro` | DATETIME | — | NOT NULL, DEFAULT CURRENT_TIMESTAMP | Estampa temporal de auditoría que indica cuándo se creó la orden. |
+## 5. Tabla: `clientes`
 
-#### 6. Tabla: detalle_renta[cite: 170]
+| Campo             | Tipo de dato | Restricciones                       | Descripción                                   |
+| ----------------- | ------------ | ----------------------------------- | --------------------------------------------- |
+| `id_cliente`      | INT          | PK, AUTO_INCREMENT, NOT NULL        | Identificador del cliente                     |
+| `nombre_completo` | VARCHAR(150) | NOT NULL                            | Nombre completo del cliente                   |
+| `telefono`        | VARCHAR(10)  | NOT NULL                            | Número telefónico del cliente                 |
+| `email`           | VARCHAR(100) | NULL                                | Correo electrónico del cliente                |
+| `estatus`         | TINYINT(1)   | NOT NULL, DEFAULT 1                 | Estado del cliente (1 = activo, 0 = inactivo) |
+| `fecha_registro`  | DATETIME     | NOT NULL, DEFAULT CURRENT_TIMESTAMP | Fecha de registro                             |
 
-* **Descripción:** Entidad intermedia (de desglose N:M) que asocia los productos retenidos con su respectiva renta, congelando los precios históricos unitarios aplicados.[cite: 170]
+## 6. Tabla: `rentas`
 
-| Campo | Tipo de Dato | Llave | Restricciones | Descripción |
-| :--- | :--- | :---: | :--- | :--- |
-| `id_detalle` | INT | PK | AUTO_INCREMENT, NOT NULL | Identificador único del renglón de desglose. |
-| `id_renta` | INT | FK | NOT NULL, ON DELETE CASCADE | Referencia a `rentas(id_renta)`. Contrato al que pertenece el renglón. |
-| `id_mobiliario` | INT | FK | NOT NULL | Referencia a `mobiliario(id_mobiliario)`. Producto rentado. |
-| `cantidad` | INT | — | NOT NULL, CHECK (cantidad > 0) | Número de piezas o unidades reservadas de este artículo. |
-| `precio_unitario_dia` | DECIMAL(10,2) | — | NOT NULL | Fotografía histórica de la tarifa diaria al momento de confirmar el pedido. |
-| `subtotal_dia` | DECIMAL(10,2) | — | NOT NULL | Calculado mediante `cantidad` * `precio_unitario_dia`. |
+| Campo                    | Tipo de dato                                             | Restricciones                        | Descripción                                   |
+| ------------------------ | -------------------------------------------------------- | ------------------------------------ | --------------------------------------------- |
+| `id_renta`               | INT                                                      | PK, AUTO_INCREMENT, NOT NULL         | Identificador de la renta                     |
+| `folio`                  | VARCHAR(20)                                              | UNIQUE, NOT NULL                     | Folio único de la renta                       |
+| `id_cliente`             | INT                                                      | FK, NOT NULL                         | Referencia al cliente                         |
+| `id_usuario`             | INT                                                      | FK, NOT NULL                         | Usuario que registró la renta                 |
+| `fecha_hora_entrega`     | DATETIME                                                 | NOT NULL                             | Fecha y hora programada para la entrega       |
+| `fecha_hora_devolucion`  | DATETIME                                                 | NOT NULL                             | Fecha y hora programada para la recolección   |
+| `fecha_entrega_real`     | DATETIME                                                 | NULL                                 | Fecha y hora en que se realizó la entrega     |
+| `fecha_devolucion_real`  | DATETIME                                                 | NULL                                 | Fecha y hora en que se realizó la recolección |
+| `id_usuario_entrega`     | INT                                                      | FK, NULL                             | Usuario que confirmó la entrega               |
+| `id_usuario_recoleccion` | INT                                                      | FK, NULL                             | Usuario que confirmó la recolección           |
+| `direccion_entrega`      | TEXT                                                     | NOT NULL                             | Dirección donde se entregará el mobiliario    |
+| `total_por_dia`          | DECIMAL(10,2)                                            | NOT NULL, CHECK (total_por_dia >= 0) | Importe total diario de la renta              |
+| `total_renta`            | DECIMAL(10,2)                                            | NOT NULL, CHECK (total_renta >= 0)   | Importe total de la renta                     |
+| `observaciones`          | TEXT                                                     | NULL                                 | Observaciones adicionales                     |
+| `estatus`                | ENUM('POR_ENTREGAR','EN_RENTA','COMPLETADA','CANCELADA') | NOT NULL, DEFAULT 'POR_ENTREGAR'     | Estado actual de la renta                     |
+| `fecha_registro`         | DATETIME                                                 | NOT NULL, DEFAULT CURRENT_TIMESTAMP  | Fecha de registro                             |
+| `fecha_actualizacion`    | DATETIME                                                 | NULL                                 | Fecha de última actualización                 |
+
+**Relaciones:**
+
+- `id_cliente` → `clientes.id_cliente`
+- `id_usuario` → `usuarios.id_usuario`
+- `id_usuario_entrega` → `usuarios.id_usuario`
+- `id_usuario_recoleccion` → `usuarios.id_usuario`
+
+## 7. Tabla: `detalle_renta`
+
+| Campo                 | Tipo de dato  | Restricciones                              | Descripción                                     |
+| --------------------- | ------------- | ------------------------------------------ | ----------------------------------------------- |
+| `id_detalle`          | INT           | PK, AUTO_INCREMENT, NOT NULL               | Identificador del detalle                       |
+| `id_renta`            | INT           | FK, NOT NULL                               | Referencia a la renta                           |
+| `id_mobiliario`       | INT           | FK, NOT NULL                               | Referencia al mobiliario                        |
+| `cantidad`            | INT           | NOT NULL, CHECK (cantidad > 0)             | Cantidad de mobiliario rentado                  |
+| `precio_unitario_dia` | DECIMAL(10,2) | NOT NULL, CHECK (precio_unitario_dia >= 0) | Precio diario por unidad al momento de la renta |
+| `subtotal_dia`        | DECIMAL(10,2) | NOT NULL, CHECK (subtotal_dia >= 0)        | Subtotal diario del mobiliario                  |
+
+**Relaciones:**
+
+- `id_renta` → `rentas.id_renta`
+- `id_mobiliario` → `mobiliario.id_mobiliario`
+
+
+## 8. Tabla: `asignaciones_renta`
+
+| Campo              | Tipo de dato                  | Restricciones                       | Descripción                                      |
+| ------------------ | ----------------------------- | ----------------------------------- | ------------------------------------------------ |
+| `id_asignacion`    | INT                           | PK, AUTO_INCREMENT, NOT NULL        | Identificador de la asignación                   |
+| `id_renta`         | INT                           | FK, NOT NULL                        | Referencia a la renta                            |
+| `id_usuario`       | INT                           | FK, NOT NULL                        | Usuario asignado a la operación                  |
+| `tipo_operacion`   | ENUM('ENTREGA','RECOLECCION') | NOT NULL                            | Tipo de operación asignada                       |
+| `es_responsable`   | TINYINT(1)                    | NOT NULL, DEFAULT 0                 | Indica si el usuario es el responsable principal |
+| `fecha_asignacion` | DATETIME                      | NOT NULL, DEFAULT CURRENT_TIMESTAMP | Fecha en que se realizó la asignación            |
+| `observaciones`    | TEXT                          | NULL                                | Observaciones de la asignación                   |
+
+**Relaciones:**
+
+- `id_renta` → `rentas.id_renta`
+- `id_usuario` → `usuarios.id_usuario`
+
+
+---
+
 
 ## 5. Guía de Instalación, Configuración e Integración del Entorno (.env)
 
@@ -2121,3 +2187,53 @@ cd frontend
 ng serve
 ```
 *La interfaz interactiva se compilará y estará disponible en tu navegador en `http://localhost:4200`.*
+## 6. Justificación del Control de Versiones y Flujo de Trabajo (Git / GitHub)
+
+La administración del código fuente de **RentFlow** no se realiza de forma empírica. Hemos establecido una estrategia estructurada de control de versiones basada en estándares de la industria para garantizar que el trabajo simultáneo de los 4 integrantes (Frontend, Backend, Base de Datos y Líder Técnica) no genere conflictos irreversibles. 
+
+A continuación, se detalla la justificación técnica de las decisiones metodológicas adoptadas sobre Git y GitHub.
+
+---
+
+### 6.1 Elección del Modelo de Trabajo: GitHub Flow vs. GitFlow
+
+Para este proyecto, se descartó el uso de metodologías complejas como *GitFlow* (que requiere múltiples ramas permanentes como `develop`, `release` y `hotfix`). En su lugar, adoptamos **GitHub Flow** por las siguientes razones:
+
+* **Agilidad y Simplicidad:** Al ser un equipo ágil de 4 personas enfocado en entregas continuas para evaluación académica, necesitamos un flujo rápido y sin fricciones.
+* **Única Fuente de Verdad:** Mantenemos una única rama permanente (`main`). Todo lo que está en `main` se considera código estable, funcional y listo para despliegue (producción).
+* **Integración Continua:** Promueve ciclos de desarrollo cortos. Las características se desarrollan, se revisan y se fusionan rápidamente, evitando el "infierno de integración" al final del proyecto.
+
+---
+
+### 6.2 Protección Estricta de la Rama Principal (`main`)
+
+Se configuró una regla de protección en GitHub que bloquea los empujes directos (`git push origin main`). 
+
+* **Justificación de Seguridad:** Nadie en el equipo (ni siquiera la administradora) puede sobreescribir el código estable accidentalmente.
+* **Garantía de Estabilidad:** Esto asegura que si el sistema RentFlow necesita ser evaluado o presentado en cualquier momento, el código en la rama principal nunca estará "roto" por un trabajo a medias.
+
+---
+
+### 6.3 Aislamiento Funcional (Ramas `feature/` y `fix/`)
+
+Cada integrante (Diego en Frontend, Gabriel en Backend, Javier en Base de datos) debe crear una rama derivada de `main` para cada tarea específica (ej. `feature/login-frontend`).
+
+* **Justificación Arquitectónica:** Permite el desarrollo en paralelo (Multithreading humano). Diego puede estar rompiendo y arreglando las vistas en Angular en su rama, mientras Gabriel ajusta la API en Node.js en la suya, sin que los errores de uno afecten el entorno local del otro.
+
+---
+
+### 6.4 Control de Calidad Obligatorio (Pull Requests)
+
+El flujo exige que todo código nuevo pase por un **Pull Request (PR)** antes de unirse a `main`.
+
+* **Justificación de Integración:** Funciona como un filtro de calidad (QA). Como líder del proyecto (Melany), los PRs me permiten inspeccionar el código, verificar que el Frontend de Diego consuma correctamente la API de Gabriel y que las consultas a la DB de Javier no tengan cuellos de botella, *antes* de que el código ensucie el proyecto final.
+* **Prevención de Fugas de Seguridad:** Es el último punto de control para revisar que ningún desarrollador haya subido accidentalmente el archivo `.env` con credenciales reales al repositorio remoto.
+
+---
+
+### 6.5 Trazabilidad del Proyecto (Conventional Commits y Squash & Merge)
+
+No permitimos mensajes de commit informales (como *"cambios"*, *"ya funciona"*, *"wip"*). Exigimos **Conventional Commits** (`feat:`, `fix:`, `docs:`) y utilizamos la estrategia **Squash and Merge** en GitHub.
+
+* **Justificación del Historial Limpio (*Squash*):** Un desarrollador puede hacer 20 commits en su rama local mientras resuelve un problema. Al hacer *Squash and Merge*, GitHub comprime esos 20 intentos en **1 solo commit perfecto** dentro de `main`. 
+* **Justificación de Nomenclatura:** Al usar prefijos como `feat:` (nueva característica) o `fix:` (corrección), el historial de `main` se vuelve autodescriptivo. Esto facilita rastrear exactamente cuándo y quién introdujo el módulo de *Empalme Logístico* o cuándo se configuró la *Arquitectura REST*, algo fundamental para la evaluación y auditoría del proyecto.
