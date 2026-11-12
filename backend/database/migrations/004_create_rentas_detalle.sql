@@ -60,3 +60,35 @@ CREATE TABLE rentas (
         FOREIGN KEY (id_usuario_recoleccion)
         REFERENCES usuarios(id_usuario)
 ) ENGINE=InnoDB;
+
+
+
+-- Tabla: detalle_renta
+CREATE TABLE detalle_renta (
+    id_detalle INT AUTO_INCREMENT PRIMARY KEY,
+    id_renta INT NOT NULL,
+    id_mobiliario INT NOT NULL,
+    cantidad INT NOT NULL,
+    precio_unitario_dia DECIMAL(10,2) NOT NULL,
+    subtotal_dia DECIMAL(10,2) NOT NULL,
+
+    CONSTRAINT chk_detalle_cantidad
+        CHECK (cantidad > 0),
+
+    CONSTRAINT chk_detalle_precio
+        CHECK (precio_unitario_dia >= 0),
+
+    CONSTRAINT chk_detalle_subtotal
+        CHECK (subtotal_dia >= 0),
+
+    CONSTRAINT uq_detalle_renta_mobiliario
+        UNIQUE (id_renta, id_mobiliario),
+
+    CONSTRAINT fk_detalle_renta
+        FOREIGN KEY (id_renta)
+        REFERENCES rentas(id_renta),
+
+    CONSTRAINT fk_detalle_mobiliario
+        FOREIGN KEY (id_mobiliario)
+        REFERENCES mobiliario(id_mobiliario)
+) ENGINE=InnoDB;
