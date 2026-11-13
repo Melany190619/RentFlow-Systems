@@ -1,0 +1,99 @@
+
+<!-- Pantalla completa del inicio de sesión -->
+<main class="flex min-h-screen items-center justify-center bg-slate-100 px-4 py-8">
+
+  <!-- Tarjeta principal del login -->
+  <section class="w-full max-w-md rounded-2xl bg-white p-8 shadow-lg">
+
+    <!-- Identidad de RentFlow -->
+    <div class="mb-8 flex items-center gap-3">
+
+      <!-- Logotipo temporal -->
+      <div class="flex h-11 w-11 items-center justify-center rounded-xl bg-emerald-600 text-xl font-bold text-white">
+        R
+      </div>
+
+      <div>
+        <h2 class="text-lg font-bold text-slate-900">
+          RentFlow
+        </h2>
+
+        <p class="text-xs font-semibold tracking-widest text-slate-500">
+          ACCESO INTERNO
+        </p>
+      </div>
+
+    </div>
+
+    <!-- Encabezado del formulario -->
+    <div class="mb-7">
+
+    <!-- Icono decorativo de seguridad -->
+    <div
+        class="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-emerald-50 text-emerald-600"
+    >
+        <!-- Icono SVG de candado -->
+        <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.8"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+        >
+            <rect x="5" y="10" width="14" height="11" rx="2" />
+            <path d="M8 10V7a4 4 0 0 1 8 0v3" />
+        </svg>
+
+    </div>
+      <h1 class="text-2xl font-bold text-slate-900">
+        Iniciar sesión
+      </h1>
+
+      <p class="mt-2 text-sm text-slate-500">
+        Ingresa tus datos para continuar.
+      </p>
+    </div>
+
+    <!-- Campos reutilizables -->
+    <div class="space-y-5">
+
+      <app-input
+        label="Usuario o correo"
+        type="text"
+        name="usuario"
+        icon="user"
+      />
+
+      <app-input
+        label="Contraseña"
+        type="password"
+        name="password"
+        icon="lock"
+      />
+
+    </div>
+
+    <!-- Botón visual; todavía no autentica usuarios -->
+
+    <!-- Botón reutilizable para iniciar sesión -->
+    <div class="mt-7">
+        <app-button
+            label="Iniciar sesión"
+            type="button"
+            variant="primary"
+        />
+    </div>
+
+    <!-- Pie de tarjeta -->
+    <p class="mt-8 text-center text-xs text-slate-400">
+      Sistema privado de RentFlow
+    </p>
+
+  </section>
+
+</main>

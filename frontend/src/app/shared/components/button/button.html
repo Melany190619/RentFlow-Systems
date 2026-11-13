@@ -1,0 +1,21 @@
+
+<!-- Botón reutilizable de RentFlow Systems -->
+<button
+  [type]="type()"
+  [disabled]="disabled()"
+
+  class="w-full rounded-lg px-4 py-3 text-sm font-semibold transition-colors duration-200"
+
+  [class.bg-emerald-600]="variant() === 'primary'"
+  [class.text-white]="variant() === 'primary'"
+  [class.hover:bg-emerald-700]="variant() === 'primary' && !disabled()"
+
+  [class.bg-slate-200]="variant() === 'secondary'"
+  [class.text-slate-800]="variant() === 'secondary'"
+  [class.hover:bg-slate-300]="variant() === 'secondary' && !disabled()"
+
+  [class.cursor-not-allowed]="disabled()"
+  [class.opacity-50]="disabled()"
+>
+  {{ label() }}
+</button>
