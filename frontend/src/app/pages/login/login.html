@@ -28,28 +28,28 @@
     <!-- Encabezado del formulario -->
     <div class="mb-7">
 
-    <!-- Icono decorativo de seguridad -->
-    <div
+      <!-- Icono decorativo de seguridad -->
+      <div
         class="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-emerald-50 text-emerald-600"
-    >
+      >
         <!-- Icono SVG de candado -->
         <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="1.8"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            aria-hidden="true"
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.8"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          aria-hidden="true"
         >
-            <rect x="5" y="10" width="14" height="11" rx="2" />
-            <path d="M8 10V7a4 4 0 0 1 8 0v3" />
+          <rect x="5" y="10" width="14" height="11" rx="2" />
+          <path d="M8 10V7a4 4 0 0 1 8 0v3" />
         </svg>
+      </div>
 
-    </div>
       <h1 class="text-2xl font-bold text-slate-900">
         Iniciar sesión
       </h1>
@@ -57,37 +57,72 @@
       <p class="mt-2 text-sm text-slate-500">
         Ingresa tus datos para continuar.
       </p>
-    </div>
-
-    <!-- Campos reutilizables -->
-    <div class="space-y-5">
-
-      <app-input
-        label="Usuario o correo"
-        type="text"
-        name="usuario"
-        icon="user"
-      />
-
-      <app-input
-        label="Contraseña"
-        type="password"
-        name="password"
-        icon="lock"
-      />
 
     </div>
 
-    <!-- Botón visual; todavía no autentica usuarios -->
+    <!-- Formulario reactivo del inicio de sesión -->
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
 
-    <!-- Botón reutilizable para iniciar sesión -->
-    <div class="mt-7">
+      <!-- Campos reutilizables -->
+
+<!-- Campos reutilizables -->
+<div class="space-y-5">
+
+  <!-- Campo de usuario o correo -->
+  <div>
+    <app-input
+      label="Usuario o correo"
+      type="text"
+      name="usuario"
+      icon="user"
+      formControlName="usuario"
+    />
+
+    <!-- Error de usuario obligatorio -->
+    @if (
+      loginForm.controls.usuario.touched &&
+      loginForm.controls.usuario.hasError('required')
+    ) {
+      <p class="mt-1 text-xs text-red-600">
+        El usuario o correo es obligatorio.
+      </p>
+    }
+  </div>
+
+  <!-- Campo de contraseña -->
+  <div>
+    <app-input
+      label="Contraseña"
+      type="password"
+      name="password"
+      icon="lock"
+      formControlName="password"
+    />
+
+    <!-- Error de contraseña obligatoria -->
+    @if (
+      loginForm.controls.password.touched &&
+      loginForm.controls.password.hasError('required')
+    ) {
+      <p class="mt-1 text-xs text-red-600">
+        La contraseña es obligatoria.
+      </p>
+    }
+  </div>
+
+</div>
+
+
+      <!-- Botón reutilizable para iniciar sesión -->
+      <div class="mt-7">
         <app-button
-            label="Iniciar sesión"
-            type="button"
-            variant="primary"
+          label="Iniciar sesión"
+          type="submit"
+          variant="primary"
         />
-    </div>
+      </div>
+
+    </form>
 
     <!-- Pie de tarjeta -->
     <p class="mt-8 text-center text-xs text-slate-400">

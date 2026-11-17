@@ -59,8 +59,16 @@
       [name]="name()"
       [type]="type()"
       [placeholder]="placeholder()"
+
+      [value]="value"
+      [disabled]="disabled"
+
+      (input)="handleInput($event)"
+      (blur)="onTouched()"
+
       [class.pl-10]="icon() !== 'none'"
-      class="h-11 w-full rounded-lg border border-slate-300 bg-white px-3 text-sm text-slate-900 outline-none transition-colors focus:border-emerald-600 focus:ring-2 focus:ring-emerald-600/15"
+
+      class="h-11 w-full rounded-lg border border-slate-300 bg-white px-3 text-sm text-slate-900 outline-none transition-colors focus:border-emerald-600 focus:ring-2 focus:ring-emerald-600/15 disabled:cursor-not-allowed disabled:bg-slate-100 disabled:opacity-60"
     />
   </div>
 </div>
