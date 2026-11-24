@@ -1,0 +1,106 @@
+
+<article
+  class="day-card"
+  [class.past-day]="day().isPast">
+
+  <!-- Fecha y estado del día -->
+  <div class="day-header">
+
+    <span class="day-date">
+      {{ day().date }}
+    </span>
+
+    <span class="day-status">
+      {{ day().status }}
+    </span>
+
+  </div>
+
+  <h3 class="day-title">
+    {{ day().day }}
+  </h3>
+
+  <!-- Actividades programadas -->
+  <div class="day-activities">
+
+    @for (task of day().tasks; track task.id) {
+
+      <div
+        class="agenda-task"
+        [class.delivery-task]="task.type === 'delivery'"
+        [class.pickup-task]="task.type === 'pickup'">
+
+        <div class="agenda-task-header">
+
+          <div class="agenda-time">
+
+            <svg class="w-5 h-5 shrink-0"
+                 viewBox="0 0 24 24"
+                 fill="none"
+                 stroke="currentColor"
+                 stroke-width="1.8"
+                 stroke-linecap="round"
+                 stroke-linejoin="round">
+              <circle cx="12" cy="12" r="9"/>
+              <path d="M12 7v5l3 2"/>
+            </svg>
+
+            <span>{{ task.time }}</span>
+
+          </div>
+
+          <span class="agenda-type">
+            {{ task.type === 'delivery'
+                ? 'ENTREGA'
+                : 'DEVOLUCIÓN' }}
+          </span>
+
+        </div>
+
+        <div class="agenda-detail">
+
+          <svg class="w-5 h-5 shrink-0"
+               viewBox="0 0 24 24"
+               fill="none"
+               stroke="currentColor"
+               stroke-width="1.8"
+               stroke-linecap="round"
+               stroke-linejoin="round">
+            <path d="M20 10c0 5-8 11-8 11S4 15 4 10a8 8 0 1 1 16 0Z"/>
+            <circle cx="12" cy="10" r="2.5"/>
+          </svg>
+
+          <span>{{ task.address }}</span>
+
+        </div>
+
+        <div class="agenda-detail equipment">
+
+          <svg class="w-5 h-5 shrink-0"
+               viewBox="0 0 24 24"
+               fill="none"
+               stroke="currentColor"
+               stroke-width="1.8"
+               stroke-linecap="round"
+               stroke-linejoin="round">
+            <path d="m12 3 9 5v8l-9 5-9-5V8Z"/>
+            <path d="m3 8 9 5 9-5M12 13v8"/>
+          </svg>
+
+          <span>{{ task.equipment }}</span>
+
+        </div>
+
+      </div>
+
+    } @empty {
+
+      <p class="no-activities">
+        Sin actividades programadas.
+      </p>
+
+    }
+
+  </div>
+
+</article>

@@ -1,19 +1,23 @@
 
 import { Routes } from '@angular/router';
 
-// Importamos el componente de la pantalla de inicio de sesión.
+// Importamos los componentes de nuestras páginas.
 import { Login } from './pages/login/login';
+import { Home } from './pages/home/home';
 
 export const routes: Routes = [
   {
-    // Dirección que escribiremos en el navegador.
+    // Pantalla de inicio de sesión.
     path: 'login',
-
-    // Componente que Angular mostrará al visitar /login.
     component: Login
   },
   {
-    // Si entramos a la raíz, redirigimos al login.
+    // Pantalla principal compartida por los tres roles.
+    path: 'home',
+    component: Home
+  },
+  {
+    // Al entrar a la raíz, redirigimos al login.
     path: '',
     redirectTo: 'login',
     pathMatch: 'full'

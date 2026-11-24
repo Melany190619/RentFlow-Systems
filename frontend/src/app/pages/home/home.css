@@ -1,0 +1,259 @@
+.home-container {
+  min-height: calc(100vh - 78px);
+  background-color: #f4f7f6;
+}
+
+.home-content {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 48px 24px;
+}
+
+.welcome-section {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 32px;
+}
+
+.welcome-title {
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -1.5px;
+  color: #142420;
+  margin-top: 8px;
+}
+
+.new-rental-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 16px 28px;
+  border-radius: 12px;
+  background-color: #087e60;
+  color: white;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 6px 16px #087e6026;
+  transition: background-color 0.2s;
+}
+
+.new-rental-button:hover {
+  background-color: #06664e;
+}
+
+@media (max-width: 640px) {
+  .home-content {
+    padding: 28px 16px;
+  }
+
+  .welcome-section {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .welcome-title {
+    font-size: 32px;
+  }
+}
+
+/* Actividades del día */
+.activities-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 26px;
+  margin-top: 34px;
+}
+
+.activity-column {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  min-width: 0;
+}
+
+.activity-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 18px;
+  border-radius: 16px;
+}
+
+.delivery-header {
+  background-color: #e4eefc;
+  color: #2162a5;
+}
+
+.pickup-header {
+  background-color: #f0e9fc;
+  color: #7441ae;
+}
+
+.activity-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+  background-color: #ffffffb3;
+  border-radius: 12px;
+}
+
+.activity-title {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.activity-description {
+  font-size: 12px;
+  color: #71817b;
+}
+
+.activity-count {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 30px;
+  height: 30px;
+  padding: 0 8px;
+  border-radius: 50%;
+  background-color: #ffffffcc;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.empty-message {
+  padding: 24px;
+  border: 1px dashed #c3d2cc;
+  border-radius: 14px;
+  color: #71817b;
+  text-align: center;
+  font-size: 14px;
+}
+
+.completed-section {
+  margin-top: 32px;
+}
+
+.completed-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px 26px;
+}
+
+/* Una sola columna en tablets pequeñas y celulares. */
+@media (max-width: 1024px) {
+  .activities-grid,
+  .completed-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Agenda semanal */
+.weekly-section {
+  margin-top: 46px;
+  padding-top: 32px;
+  border-top: 1px solid #dce5e1;
+}
+
+.weekly-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 22px;
+}
+
+.weekly-label {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: #087e60;
+}
+
+.weekly-title {
+  font-size: 26px;
+  font-weight: 700;
+  color: #142420;
+  margin-top: 6px;
+}
+
+.weekly-description {
+  font-size: 14px;
+  color: #71817b;
+  margin-top: 4px;
+}
+
+.today-indicator {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 16px;
+  background-color: #e5f5ef;
+  border: 1px solid #9bd3c0;
+  border-radius: 12px;
+}
+
+.today-badge {
+  padding: 6px 8px;
+  background-color: #087e60;
+  color: #ffffff;
+  font-size: 10px;
+  font-weight: 700;
+  border-radius: 7px;
+}
+
+.today-date {
+  font-size: 14px;
+  font-weight: 700;
+  color: #142420;
+}
+
+.today-tasks {
+  font-size: 10px;
+  color: #71817b;
+}
+
+/* Las tarjetas mantienen su ancho al hacer scroll. */
+.weekly-scroll {
+  display: flex;
+  align-items: stretch;
+  gap: 14px;
+  overflow-x: auto;
+  padding-bottom: 14px;
+  scroll-snap-type: x proximity;
+  scrollbar-width: thin;
+  scrollbar-color: #b8cec4 transparent;
+}
+
+.weekly-scroll app-day-card {
+  flex: 0 0 270px;
+  scroll-snap-align: start;
+}
+
+/* Adaptación de la agenda para celulares. */
+@media (max-width: 640px) {
+  .weekly-section {
+    margin-top: 32px;
+    padding-top: 24px;
+  }
+
+  .weekly-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .weekly-title {
+    font-size: 23px;
+  }
+
+  .weekly-scroll app-day-card {
+    flex-basis: min(250px, 85%);
+  }
+}

@@ -1,0 +1,43 @@
+.summary-bar {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 28px;
+  padding: 18px 24px;
+  background-color: #ffffff;
+  border: 1px solid #dce5e1;
+  border-radius: 14px;
+}
+
+.summary-item {
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+}
+
+.summary-value {
+  font-size: 20px;
+  font-weight: 700;
+  color: #142420;
+}
+
+.summary-label {
+  font-size: 14px;
+  color: #71817b;
+}
+
+@media (max-width: 640px) {
+  .summary-bar {
+    justify-content: space-between;
+    gap: 12px;
+    padding: 16px;
+  }
+
+  .summary-value {
+    font-size: 18px;
+  }
+
+  .summary-label {
+    font-size: 12px;
+  }
+}

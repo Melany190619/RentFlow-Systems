@@ -1,0 +1,91 @@
+<article
+  class="task-card"
+  [class.completed]="task().completed">
+
+  <!-- Horario de la actividad -->
+  <div class="task-time">
+
+    <svg class="w-5 h-5"
+         viewBox="0 0 24 24"
+         fill="none"
+         stroke="currentColor"
+         stroke-width="1.8"
+         stroke-linecap="round"
+         stroke-linejoin="round">
+      <circle cx="12" cy="12" r="9"/>
+      <path d="M12 7v5l3 2"/>
+    </svg>
+
+    <span class="day-label">HOY</span>
+
+    <span class="time-value">
+      {{ task().time }}
+    </span>
+
+  </div>
+
+  <!-- Información de la renta -->
+  <div class="task-information">
+
+    <h3 class="task-title">
+      {{ task().title }}
+    </h3>
+
+    <div class="task-address">
+
+      <svg class="w-5 h-5 shrink-0"
+           viewBox="0 0 24 24"
+           fill="none"
+           stroke="currentColor"
+           stroke-width="1.8"
+           stroke-linecap="round"
+           stroke-linejoin="round">
+        <path d="M20 10c0 5-8 11-8 11S4 15 4 10a8 8 0 1 1 16 0Z"/>
+        <circle cx="12" cy="10" r="2.5"/>
+      </svg>
+
+      <span>{{ task().address }}</span>
+
+    </div>
+
+    <div class="task-equipment">
+
+      <svg class="w-5 h-5 shrink-0"
+           viewBox="0 0 24 24"
+           fill="none"
+           stroke="currentColor"
+           stroke-width="1.8"
+           stroke-linecap="round"
+           stroke-linejoin="round">
+        <path d="m12 3 9 5v8l-9 5-9-5V8Z"/>
+        <path d="m3 8 9 5 9-5M12 13v8"/>
+      </svg>
+
+      <span>{{ task().equipment }}</span>
+
+    </div>
+
+  </div>
+
+  <!-- Evitamos completar una tarea más de una vez -->
+  <button
+    type="button"
+    class="complete-button"
+    [disabled]="task().completed"
+    (click)="markAsCompleted()">
+
+    <svg class="w-4 h-4"
+         viewBox="0 0 24 24"
+         fill="none"
+         stroke="currentColor"
+         stroke-width="2"
+         stroke-linecap="round"
+         stroke-linejoin="round">
+      <path d="m5 12 4 4L19 6"/>
+    </svg>
+
+    {{ task().completed ? 'Completada' : 'Marcar lista' }}
+
+  </button>
+
+</article>

@@ -1,0 +1,238 @@
+<app-navbar
+  [userName]="fullName()"
+  [role]="role()">
+</app-navbar>
+
+<main class="home-container">
+
+  <div class="home-content">
+
+    <!-- Bienvenida -->
+    <section class="welcome-section">
+
+      <div>
+
+        <p class="text-xs font-bold uppercase
+                  tracking-wider text-[#087e60]">
+          {{ currentDate() }}
+        </p>
+
+        <h1 class="welcome-title">
+          Buenos días, {{ userName() }}
+        </h1>
+
+        <p class="text-sm text-[#142420] mt-2">
+          Tienes {{ pendingTasks() }} tareas pendientes para hoy.
+        </p>
+
+      </div>
+
+      <button
+        type="button"
+        class="new-rental-button">
+
+        <svg class="w-5 h-5"
+             viewBox="0 0 24 24"
+             fill="none"
+             stroke="currentColor"
+             stroke-width="2"
+             stroke-linecap="round">
+          <path d="M12 5v14M5 12h14"/>
+        </svg>
+
+        Nueva renta
+
+      </button>
+
+    </section>
+
+    <!-- Resumen de actividades -->
+    <app-summary-bar
+      [items]="summary()">
+    </app-summary-bar>
+
+    <!-- Actividades programadas para hoy -->
+    <section class="activities-grid">
+
+    <!-- Entregas -->
+    <div class="activity-column">
+
+    <div class="activity-header delivery-header">
+
+      <div class="activity-icon">
+
+        <svg class="w-5 h-5"
+             viewBox="0 0 24 24"
+             fill="none"
+             stroke="currentColor"
+             stroke-width="1.8"
+             stroke-linecap="round"
+             stroke-linejoin="round">
+          <path d="m12 3 9 5v8l-9 5-9-5V8Z"/>
+          <path d="m3 8 9 5 9-5M12 13v8"/>
+        </svg>
+
+      </div>
+
+      <div class="flex-1">
+        <h2 class="activity-title">Entregas de hoy</h2>
+        <p class="activity-description">Equipo que debe salir</p>
+      </div>
+
+      <span class="activity-count">
+        {{ deliveries().length }}
+      </span>
+
+    </div>
+
+    @for (task of deliveries(); track task.id) {
+
+      <app-task-card
+        [task]="task"
+        (taskCompleted)="completeTask($event)">
+      </app-task-card>
+
+    } @empty {
+
+      <p class="empty-message">
+        No hay entregas pendientes.
+      </p>
+
+    }
+
+  </div>
+
+    <!-- Recolecciones -->
+    <div class="activity-column">
+
+    <div class="activity-header pickup-header">
+
+      <div class="activity-icon">
+
+        <svg class="w-5 h-5"
+             viewBox="0 0 24 24"
+             fill="none"
+             stroke="currentColor"
+             stroke-width="1.8"
+             stroke-linecap="round"
+             stroke-linejoin="round">
+          <path d="m3 10 9-7 9 7"/>
+          <path d="M5 9v12h14V9"/>
+        </svg>
+
+      </div>
+
+      <div class="flex-1">
+        <h2 class="activity-title">Recolecciones de hoy</h2>
+        <p class="activity-description">Equipo que debe regresar</p>
+      </div>
+
+      <span class="activity-count">
+        {{ pickups().length }}
+      </span>
+
+    </div>
+
+    @for (task of pickups(); track task.id) {
+
+      <app-task-card
+        [task]="task"
+        (taskCompleted)="completeTask($event)">
+      </app-task-card>
+
+    } @empty {
+
+      <p class="empty-message">
+        No hay recolecciones pendientes.
+      </p>
+
+    }
+
+  </div>
+
+</section>
+
+<!-- Mostramos esta sección cuando se completa alguna actividad. -->
+@if (completedTasks().length > 0) {
+
+  <section class="completed-section">
+
+    <h2 class="text-xl font-bold text-[#142420] mb-4">
+      Actividades completadas
+    </h2>
+
+    <div class="completed-grid">
+
+      @for (task of completedTasks(); track task.id) {
+
+        <app-task-card [task]="task">
+        </app-task-card>
+
+      }
+
+    </div>
+
+  </section>
+
+}
+
+<!-- Agenda de los demás días de la semana -->
+<section class="weekly-section">
+
+  <div class="weekly-header">
+
+    <div>
+
+      <p class="weekly-label">
+        AGENDA SEMANAL
+      </p>
+
+      <h2 class="weekly-title">
+        Resto de la semana
+      </h2>
+
+      <p class="weekly-description">
+        Desliza para consultar los próximos días.
+      </p>
+
+    </div>
+
+    <!-- Resumen de las actividades de hoy -->
+    <div class="today-indicator">
+
+      <span class="today-badge">HOY</span>
+
+      <div>
+
+        <p class="today-date">Mié 17</p>
+
+        <p class="today-tasks">
+          {{ pendingTasks() }} tareas pendientes
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- El desplazamiento horizontal solo afecta a la agenda. -->
+  <div class="weekly-scroll"
+       tabindex="0"
+       aria-label="Agenda semanal">
+
+    @for (day of weeklyAgenda(); track day.id) {
+
+      <app-day-card [day]="day">
+      </app-day-card>
+
+    }
+
+  </div>
+
+</section>
+
+
+  </div>
+
+</main>

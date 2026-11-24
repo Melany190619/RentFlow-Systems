@@ -1,0 +1,115 @@
+.task-card {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 20px;
+  min-height: 120px;
+  background-color: #ffffff;
+  border: 1px solid #dce5e1;
+  border-radius: 16px;
+  transition: background-color 0.2s;
+}
+
+.task-time {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  min-width: 84px;
+  padding-right: 16px;
+  border-right: 1px solid #dce5e1;
+  color: #087e60;
+}
+
+.day-label {
+  font-size: 10px;
+  font-weight: 600;
+  color: #71817b;
+}
+
+.time-value {
+  font-size: 15px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.task-information {
+  flex: 1;
+  min-width: 0;
+}
+
+.task-title {
+  font-size: 15px;
+  font-weight: 700;
+  color: #142420;
+  margin-bottom: 8px;
+}
+
+.task-address,
+.task-equipment {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 12px;
+}
+
+.task-address {
+  color: #71817b;
+  margin-bottom: 6px;
+}
+
+.task-equipment {
+  color: #142420;
+  font-weight: 600;
+}
+
+.complete-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  padding: 10px 12px;
+  border: 1px solid #c3d2cc;
+  border-radius: 9px;
+  font-size: 12px;
+  font-weight: 700;
+  color: #142420;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background-color 0.2s;
+}
+
+.complete-button:hover:not(:disabled) {
+  background-color: #e5f4ed;
+  border-color: #087e60;
+}
+
+/* Estilos para actividades terminadas */
+.task-card.completed {
+  background-color: #f0f8f4;
+}
+
+.complete-button:disabled {
+  background-color: #daf0e7;
+  color: #087e60;
+  cursor: default;
+}
+
+/* En pantallas pequeñas el botón pasa debajo de la información. */
+@media (max-width: 640px) {
+  .task-card {
+    flex-wrap: wrap;
+    gap: 12px;
+    padding: 16px;
+  }
+
+  .task-time {
+    min-width: 70px;
+    padding-right: 12px;
+  }
+
+  .complete-button {
+    width: 100%;
+  }
+}

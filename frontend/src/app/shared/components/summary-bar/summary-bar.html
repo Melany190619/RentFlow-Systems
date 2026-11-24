@@ -1,0 +1,19 @@
+<div class="summary-bar">
+
+  @for (item of items(); track item.label) {
+
+    <div class="summary-item">
+
+      <span class="summary-value">
+        {{ item.value }}
+      </span>
+
+      <span class="summary-label">
+        {{ item.label }}
+      </span>
+
+    </div>
+
+  }
+
+</div>

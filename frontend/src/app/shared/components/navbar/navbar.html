@@ -1,0 +1,118 @@
+<header class="bg-white border-b border-[#dce5e1]">
+
+  <div class="navbar-container">
+
+    <!-- Logo -->
+    <a routerLink="/home" class="flex items-center gap-3">
+
+      <div class="w-10 h-10 rounded-xl bg-[#087e60]
+                  text-white flex items-center justify-center
+                  font-bold text-xl">
+        R
+      </div>
+
+      <div>
+        <p class="text-lg font-bold text-[#142420] leading-tight">
+          RentFlow
+        </p>
+
+        <p class="text-[10px] font-semibold uppercase
+                  tracking-wider text-[#71817b]">
+          {{ role() }}
+        </p>
+      </div>
+
+    </a>
+
+    <!-- Navegación principal -->
+    <nav class="navigation">
+
+      @for (item of navItems(); track item.route) {
+
+        <a
+          [routerLink]="item.route"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }"
+          class="nav-link">
+
+          @switch (item.icon) {
+
+            @case ('home') {
+              <svg class="w-5 h-5" viewBox="0 0 24 24"
+                   fill="none" stroke="currentColor"
+                   stroke-width="1.8" stroke-linecap="round"
+                   stroke-linejoin="round">
+                <path d="m3 10 9-7 9 7"/>
+                <path d="M5 9v12h14V9"/>
+              </svg>
+            }
+
+            @case ('plus') {
+              <svg class="w-5 h-5" viewBox="0 0 24 24"
+                   fill="none" stroke="currentColor"
+                   stroke-width="1.8" stroke-linecap="round">
+                <path d="M12 5v14M5 12h14"/>
+              </svg>
+            }
+
+            @case ('cart') {
+              <svg class="w-5 h-5" viewBox="0 0 24 24"
+                   fill="none" stroke="currentColor"
+                   stroke-width="1.8" stroke-linecap="round"
+                   stroke-linejoin="round">
+                <path d="M3 3h2l3 12h11l2-8H6"/>
+                <circle cx="9" cy="20" r="1"/>
+                <circle cx="18" cy="20" r="1"/>
+              </svg>
+            }
+
+          }
+
+          <span>{{ item.label }}</span>
+
+        </a>
+
+      }
+
+    </nav>
+
+    <!-- Perfil del usuario -->
+    <div class="flex items-center gap-3">
+
+      <div class="w-10 h-10 rounded-full bg-[#daf0e7]
+                  text-[#087e60] flex items-center
+                  justify-center font-bold text-sm">
+        {{ initials() }}
+      </div>
+
+      <div>
+        <p class="text-sm font-bold text-[#142420]">
+          {{ userName() }}
+        </p>
+
+        <a routerLink="/login"
+           class="text-[10px] font-semibold uppercase
+                  tracking-wide text-[#71817b] hover:text-[#087e60]">
+          Cerrar sesión
+        </a>
+      </div>
+
+      <a routerLink="/login"
+         aria-label="Cerrar sesión"
+         class="text-[#142420] hover:text-[#087e60]">
+
+        <svg class="w-5 h-5" viewBox="0 0 24 24"
+             fill="none" stroke="currentColor"
+             stroke-width="1.8" stroke-linecap="round"
+             stroke-linejoin="round">
+          <path d="M14 4h6v16h-6"/>
+          <path d="M3 12h13m-5-5 5 5-5 5"/>
+        </svg>
+
+      </a>
+
+    </div>
+
+  </div>
+
+</header>
